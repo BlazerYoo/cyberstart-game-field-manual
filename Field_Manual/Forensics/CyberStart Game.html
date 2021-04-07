@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="charset" content="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"><script src="./CyberStart Game_files/nr-1208.min.js.download"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQMHV1dQDRABVFZWAwcEVFA=",licenseKey:"e8c65ea953",applicationID:"107446324"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(24),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(25),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(25),a=t(24);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(21),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(24),c=t(25),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(26);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],20:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(23),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],21:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],22:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],23:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],24:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],25:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],26:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(24),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(y,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=t(18),c=t("handle"),s=t(24),f=t("ee"),u=t(22),d=t(19),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;if(d(l.location)){NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:x,userAgent:u};t(15),t(20),p[h]?(p[h]("DOMContentLoaded",o,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",i),l[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(25),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
+    <title>CyberStart Game</title>
+    <link type="text/css" rel="stylesheet" media="all" href="./CyberStart Game_files/styles.f4a8c688e96da30d3af8545a87dd1625.css">
+    <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        document.write('<script src="/assets/js/vendors/promise-polyfill.006f3795a9680e46c19e.js"><\/script>');
+    }
+    </script>
+    <script src="./CyberStart Game_files/jquery.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/highlight.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/confetti.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/event-stream.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/other.006f3795a9680e46c19e.js.download"></script>
+
+    
+    <link rel="apple-touch-icon-precomposed" href="https://game.joincyberstart.com/assets/images/apple-touch-icon.png?version=4.2.4">
+    <link rel="icon" type="image/png" href="https://game.joincyberstart.com/assets/images/apple-touch-icon.png?version=4.2.4">
+    <link rel="shortcut icon" href="https://game.joincyberstart.com/assets/images/favicon.ico?version=4.2.4">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+            <noscript>
+            <style>html {
+                    display: none;
+                }</style>
+            <meta http-equiv="refresh" content="0;url=/no-javascript">
+        </noscript>
+    </head>
+
+<body class="body vsc-initialized">
+
+
+    <div id="badge-modal" class="module-notification" style="display: none;"></div>
+
+    <div class="black-mask" id="blackMask"></div>
+    <div class="black-mask-modal" id="blackMaskModal"></div>
+    <div class="btn black-mask-btn" id="blackMaskBtn"></div>
+
+
+<div class="page page-standard page-navbar page-manual">
+  <nav class="module-navbar">
+    <div class="links">
+      <a href="https://game.joincyberstart.com/welcome" class="link">Welcome</a>
+
+      <a href="https://game.joincyberstart.com/manual" class="link">Field manual</a>
+
+                <a href="https://game.joincyberstart.com/base-select" class="link">Bases</a>
+            </div>
+
+    <div class="logo">
+  <a href="https://game.joincyberstart.com/base-select" class="link"><img src="./CyberStart Game_files/asset-game-logo-inside-02.png" alt="CyberStart Game" class="image"></a>
+</div>
+
+    <div class="info">
+    <div class="item">
+        <a href="https://game.joincyberstart.com/profile" class="link">View profile</a>
+    </div>
+
+    
+    <div class="item badges">22 badges</div>
+
+    <div class="item progress">62% complete</div>
+
+    <div class="item points">83,500 pts</div>
+</div>
+  </nav>
+  <main class="module-manual">
+    <div class="links">
+              <a href="https://game.joincyberstart.com/manual?chapter=01&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-introduction">
+        <span class="number">01</span>
+        <span class="name">Introduction</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-linux">
+        <span class="number">02</span>
+        <span class="name">Linux</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-programming">
+        <span class="number">03</span>
+        <span class="name">Programming</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=04&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-web">
+        <span class="number">04</span>
+        <span class="name">Web</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=05&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-binary">
+        <span class="number">05</span>
+        <span class="name">Binary</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=06&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-cryptography">
+        <span class="number">06</span>
+        <span class="name">Cryptography</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-forensics">
+        <span class="number">07</span>
+        <span class="name">Forensics</span>
+      </a>
+            </div>
+
+    <div class="chapter chapter-07"><div class="chapter chapter-07">
+  <div class="topper topper-forensics">
+    <div class="number">Chapter 07</div>
+
+    <h2 class="heading heading-secondary heading-center heading-light">Forensics</h2>
+  </div>
+
+  <div class="illustration" style="background-image: url(&#39;/assets/images/asset-game-manual-forensics-01.png?version=4.2.4&#39;);"></div>
+
+  <div class="columns">
+    <div class="sections">
+      <h3 class="heading heading-quaternary">Chapter sections</h3>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-1"><span class="number">7.1</span> Introduction</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-2"><span class="number">7.2</span> Steganography</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-3"><span class="number">7.3</span> Files</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-4"><span class="number">7.4</span> File Headers</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-5"><span class="number">7.5</span> Hex (Hexadecimal)</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-6"><span class="number">7.6</span> Strings</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-7"><span class="number">7.7</span> File Integrity and Hashes</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-8"><span class="number">7.8</span> Wireshark and tcpdump</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-9"><span class="number">7.9</span> Windows Registry</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-10"><span class="number">7.10</span> Windows Event Logs</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-11"><span class="number">7.11</span> Disk Forensics and the File System</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-12"><span class="number">7.12</span> Memory Forensics and Volatility</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-13"><span class="number">7.13</span> Base64</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-7-14"><span class="number">7.14</span> Forensic Tools</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="quiz">Quiz</a>
+    </div>
+
+    <div class="content">
+      <div class="section" id="section-no-7-1">
+        <h2 class="heading heading-tertiary">7.1 Introduction</h2>
+
+        <p class="text">Computer forensics is the process of examining digital media in order to identify, preserve, recover, and analyse, then presenting facts about that digital information.</p>
+      </div>
+
+      <div class="section" id="section-no-7-2">
+        <h2 class="heading heading-tertiary">7.2 Steganography</h2>
+
+        <p class="text">Steganography is the art of hiding the information's existence. At the most basic level, you could open another file (like an image) in a text editor and hide a message inside of it. You would have to be careful to put it in exactly the right place to avoid corrupting the image, but it could work. There are more advanced forms of steganography too. For example, you could change some of the pixels in an image in just the right way or change an audio file’s frequency just enough to hide a message. These are more advanced forms of steganography which are very difficult to detect.</p>
+
+        <p class="text">There are a few useful steganography tools you can use to aid in investigations which appear to contain files which have been manipulated or changed.</p>
+
+        <p class="text text-primary">Steghide</p>
+
+        <p class="text">Steghide is a program that can both hide and extract data in various kinds of filetypes, it is a go to steganography tool for anyone wanting to investigate files they think may contain secret messages.</p>
+
+        <p class="text">Useful commands in Steghide:</p>
+
+        <pre><code class="console hljs shell">info, --info
+            Display information about a cover or stego file.
+
+-ef, --embedfile filename
+            Specify the file that will be embedded (the file
+            that contains the secret message).
+
+-cf, --coverfile filename
+            Specify the cover file that will be used to embed
+            data.
+
+-sf, --stegofile filename
+            Specify the stego file (the file that contains
+            embedded data).
+
+-xf, --extractfile filename
+            Create a file with the name filename and write the
+            data that is embedded in the stego file to it.</code></pre>
+      </div>
+
+      <div class="section" id="section-no-7-3">
+        <h2 class="heading heading-tertiary">7.3 Files</h2>
+
+        <p class="text">What are files? A file is just a collection of data. Each file is interpreted differently depending on the program used to read the file. To a computer, the file is just a series of 0s and 1s. Viewing a file as the 0s and 1s would make it much too long, however, so we encode them into hex and can then view it with a hex editor, such as 'ghex'. We can learn a lot from looking at the raw hex of a file. One of the things we can find information on is the file header.</p>
+      </div>
+
+      <div class="section" id="section-no-7-4">
+        <h2 class="heading heading-tertiary">7.4 File Headers</h2>
+
+        <p class="text">Since a file is just a series of 0s and 1s, you need to open the right file with the right program to get something meaningful. On some operating systems, the file extension is mapped to a program, so for example opening a file that ends in '.pdf' would, when clicked, open in a PDF viewer. Just because a file ends in a particular extension it doesn't mean that the file is in the correct format to be read by that program, however. What matters most is the contents of the file itself.</p>
+
+        <p class="text">Within most files there is a file header. The file header is a sequence of bytes near the start of the file which are essentially a signature and can reveal the actual type of file you are looking at. If you were to rename a text file to '.zip', the unzip tool would know it is not a valid zip file from the file header. The file header is also sometimes known as the 'magic numbers' or 'magic bytes' of a file. Take zip files as an example:</p>
+
+        <p class="text">50 4B 03 04 is the file header for a normal zip file with something in it. 50 4B 05 06 is the file header of a zip file which is empty. 50 4B 07 08 is the file header of a zip file has been split into multiple parts.</p>
+
+        <p class="text">Many file types have file header associated with them, they are easily searchable online. Additionally, Linux has a tool called 'file' which is available on most Linux systems by default. The file command can use a database to look up file headers for you automatically. Here's the usage:</p>
+
+        <pre><code class="console hljs shell"><span class="hljs-meta">$</span><span class="bash"> file filename</span></code></pre>
+
+        <p class="text">This will tell you what the file header says the file is.</p>
+      </div>
+
+      <div class="section" id="section-no-7-5">
+        <h2 class="heading heading-tertiary">7.5 Hex (Hexadecimal)</h2>
+
+        <p class="text">Hexadecimal (hex) is an alternative number system which uses 16 as the number base. Normally, we count in base 10. Computers work in base 2. Since computers work in base 2, binary numbers can start to get very long indeed. Hexadecimal is frequently used to represent binary numbers in a shorter format. Hex digits reflect a 4-bit binary sequence and can be any of the following sixteen digits. Notice how we use letters as digits when we run out of numbers.</p>
+
+        <p class="text">0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+
+        <pre><code class="hljs gherkin">|<span class="hljs-string">Decimal     </span>|<span class="hljs-string">Binary      </span>|<span class="hljs-string">Hexadecimal </span>|
+|<span class="hljs-string">------------</span>|<span class="hljs-string">------------</span>|<span class="hljs-string">------------</span>|
+|<span class="hljs-string">0           </span>|<span class="hljs-string">0000        </span>|<span class="hljs-string">0           </span>|
+|<span class="hljs-string">1           </span>|<span class="hljs-string">0001        </span>|<span class="hljs-string">1           </span>|
+|<span class="hljs-string">2           </span>|<span class="hljs-string">0010        </span>|<span class="hljs-string">2           </span>|
+|<span class="hljs-string">3           </span>|<span class="hljs-string">0011        </span>|<span class="hljs-string">3           </span>|
+|<span class="hljs-string">4           </span>|<span class="hljs-string">0100        </span>|<span class="hljs-string">4           </span>|
+|<span class="hljs-string">5           </span>|<span class="hljs-string">0101        </span>|<span class="hljs-string">5           </span>|
+|<span class="hljs-string">6           </span>|<span class="hljs-string">0110        </span>|<span class="hljs-string">6           </span>|
+|<span class="hljs-string">7           </span>|<span class="hljs-string">0111        </span>|<span class="hljs-string">7           </span>|
+|<span class="hljs-string">8           </span>|<span class="hljs-string">1000        </span>|<span class="hljs-string">8           </span>|
+|<span class="hljs-string">9           </span>|<span class="hljs-string">1001        </span>|<span class="hljs-string">9           </span>|
+|<span class="hljs-string">10          </span>|<span class="hljs-string">1010        </span>|<span class="hljs-string">A           </span>|
+|<span class="hljs-string">11          </span>|<span class="hljs-string">1011        </span>|<span class="hljs-string">B           </span>|
+|<span class="hljs-string">12          </span>|<span class="hljs-string">1100        </span>|<span class="hljs-string">C           </span>|
+|<span class="hljs-string">13          </span>|<span class="hljs-string">1101        </span>|<span class="hljs-string">D           </span>|
+|<span class="hljs-string">14          </span>|<span class="hljs-string">1110        </span>|<span class="hljs-string">E           </span>|
+|<span class="hljs-string">15          </span>|<span class="hljs-string">1111        </span>|<span class="hljs-string">F           </span>|</code></pre>
+
+        <p class="text">8-bit (1 byte) binary numbers can therefore be written using only two hex digits.</p>
+
+        <p class="text">10100010 in binary would be A2 in hex.</p>
+
+        <p class="text">A9 in hex would be 10101001 in binary.</p>
+
+        <p class="text">Understanding how hex works is important when dealing with forensic investigations and often hex editing tools are used to manipulate images and files. Using programs such as 'ghex' to view the files raw hex can be an extremely useful step in forensic investigations.</p>
+      </div>
+
+      <div class="section" id="section-no-7-6">
+        <h2 class="heading heading-tertiary">7.6 Strings</h2>
+
+        <p class="text">The file header is not the only useful bit of information you can find in a file with a hex editor. If you open a binary file in a hex editor like 'ghex', you will often be able to see sequences of bytes that when converted to ASCII look like words or sentences. This is because 'ghex' automatically tries to convert the hex data into ASCII text side by side. Most of the time, the hex was never intended to be ASCII so it will just produce junk but, if you come across any text in the code, it will be handily converted for you. There's actually a faster way to go looking for strings in text files: it's called 'strings' and it's a Terminal program. The usage is simple:</p>
+
+        <pre><code class="console hljs shell"><span class="hljs-meta">$</span><span class="bash"> strings file</span></code></pre>
+
+        <p class="text">This will output all the strings it finds in a text file. It will also produce lots of junk because it doesn't know for sure what is supposed to be text and what is just data. By default, it will ignore very short strings, so watch out for that!</p>
+      </div>
+
+      <div class="section" id="section-no-7-7">
+        <h2 class="heading heading-tertiary">7.7 File Integrity and Hashes</h2>
+
+        <p class="text">File integrity is particularly important in forensics, we need to be able to prove that files have not been changed after a specific point in time. For example, if you forensically image a system you will get a disk image file. When you submit that file as evidence later, say in a court of law, you will need some method to prove that the file has not been altered since the disk image was created. If you publish a piece of software online, you may want to provide some way of proving that the file has not been tampered with by a third party when it was redistributed. We do all this using file hashes.</p>
+
+        <p class="text">Hashing is a form of one-way encryption. When a file is operated on by a hashing algorithm, it will produce a value that is unique to the contents of that file. If the contents of a file changes by even one bit, the file hash produced by the hashing algorithm will change.</p>
+
+        <p class="text">Here are a few common hashing algorithms you may come across:</p>
+
+        <ul class="list">
+          <li class="list-item">MD5 (This is older and weaker. It shouldn't be used anymore because there is a high probability of collisions).</li>
+
+          <li class="list-item">SHA1 (This is also fairly weak).</li>
+
+          <li class="list-item">SHA2 (This is the one you should be using).</li>
+        </ul>
+      </div>
+
+      <div class="section" id="section-no-7-8">
+        <h2 class="heading heading-tertiary">7.8 Wireshark and tcpdump</h2>
+
+        <p class="text">Wireshark is a network packet analyzer and can be used to troubleshoot and analyse network traffic. This information can then be used to evaluate security events and aid in forensic investigations, along with generic infrastructure troubleshooting.</p>
+
+        <p class="text">Wireshark and tcpdump both enable you to sniff packets going across the network (which are visible to your computer) and save the packets into a file usually known as a 'packet capture'. Tcpdump is a command line tool with no graphical user interface. Wireshark has a graphical user interface can let you examine a packet capture in a visual manner which makes analysis of packet captures much easier than it would otherwise be.</p>
+
+        <p class="text">Here are some useful wireshark filters:</p>
+
+        <pre><code class="console hljs shell">ip.addr==
+ip.dst==
+ip.src ==
+ip.dst ==
+tcp.port==
+udp.port==
+http.request
+http.response
+http or dns
+tcp contains xxx</code></pre>
+      </div>
+
+      <div class="section" id="section-no-7-9">
+        <h2 class="heading heading-tertiary">7.9 Windows Registry</h2>
+
+        <p class="text">The windows registry contains a treasure trove of information for forensic analysis. It is the main collection of configuration settings within the Microsoft Windows Operating system. In order to access the Windows registry the command regedit can be typed in the run/search window from there you will be presented with the registry. The five folders all beginning with HKEY are referred to as 'hives', these are logical groups of keys, subkeys and values within the Windows registry.</p>
+
+        <pre><code class="console hljs shell">HKCR (HKEY_CLASSES_ROOT)</code></pre>
+
+        <p class="text">This hive contains file extension association information which allows Windows to know which program to use to open which files.</p>
+
+        <pre><code class="console hljs shell">HKCU (HKEY_CURRENT_USER)</code></pre>
+
+        <p class="text">This hive contains Windows and software configuration related specifically to the currently logged in user(s).</p>
+
+        <pre><code class="console hljs shell">HKLM (HKEY_LOCAL_MACHINE)</code></pre>
+
+        <p class="text">This hive contains Windows and software configuration which is specific to the computer itself and not the logged in users. This hive also contains information about the current hardware of the computer and device drivers.</p>
+
+        <pre><code class="console hljs shell">HKU (HKEY_USERS)</code></pre>
+
+        <p class="text">This hive contains user specific configuration related to all users who have signed into the computer in the past.</p>
+      </div>
+
+      <div class="section" id="section-no-7-10">
+        <h2 class="heading heading-tertiary">7.10 Windows Event Logs</h2>
+
+        <p class="text">Within windows there is an Event Viewer, users can access this by typing event viewer into the run field. Within this event viewer there is a windows event log folder which contains application, security, setup, system and forwarded event logs. These logs contain detailed information such as important hardware and software actions and different types of logins. All of which can be used in forensic investigations to further examine suspicious activities.</p>
+
+        <p class="text">Each event log contains date/time information, usernames and computer ID's and source and type information. Also included for each event is an event ID which specifies the event type. The ID's meaning can be searched for online. For example, an event ID of 4624 is a successful login event and is generated when a logon session is created. The most common types of logon field are 2 (interactive) and 3 (network). All of this information can be extremely useful in identifying any unexpected or malicious logons from unknown users. Here is an example of a logon event:</p>
+
+        <pre><code class="console hljs shell">Event ID:4624
+Source
+Microsoft-Windows-Security-Auditing
+Level
+Success Audit
+Description
+An account was successfully logged on.
+
+Subject:
+Security ID: NULL SID
+Account Name: -
+Account Domain: -
+Logon ID: 0x0
+
+Logon Type: 3
+
+New Logon:
+Security ID: SYSTEM
+Account Name: JDOE$
+Account Domain: CONTOSO
+Logon ID: 0x2b5a1cc
+Logon GUID: {8d290146-94c0-cb12-53e0-fc3f3e7fa143}
+
+Process Information:
+Process ID: 0x0
+Process Name: -
+
+Network Information:
+Workstation Name:
+Source Network Address: ::1
+Source Port: 54076
+
+Detailed Authentication Information:
+Logon Process: Kerberos
+Authentication Package: Kerberos
+Transited Services: -
+Package Name (NTLM only): -
+Key Length: 0</code></pre>
+      </div>
+
+      <div class="section" id="section-no-7-11">
+        <h2 class="heading heading-tertiary">7.11 Disk Forensics and the File System</h2>
+
+        <p class="text">There are many different kinds of file systems, each one is structured differently. They can span across different storage devices that use different kinds of media, the most common today being the hard disk drive (HDD). </p>
+
+        <p class="text">Examples of disk file systems include FAT (12/16/32), NTFS, HFS, ext2/3/4, UNIX and so on. File systems such as FAT (File Allocation Table) and UNIX store directory information as a simple flat file, this is different to NTFS as NTFS provides indexing and efficient storage of large data for fast lookups.</p>
+
+        <p class="text">NTFS (New Technology File System) is the propriety system developed my Microsoft and is the file system that the Windows NT operating system uses for storing and retrieving files on the hard disk. Forensic Investigators can take advantage of NTFS in order to identify files that once existed in a given directory. Master File Table entries (MFT) in NTFS provide a wealth of information and are not completely removed when file deletion occurs, these files in some cases can be retrieved and investigated. NTFS directory index entries utilize a <code class="code code-inline">$FILE_NAME</code> attribute to store information within the index providing information about the file such as full filename, creation and modification time, access time, MFT change time, file size and its parent directory. So, you can imagine the wealth of information that is stored relating to files!</p>
+
+        <p class="text">Useful Volatility commands:</p>
+
+        <pre><code class="console hljs shell">Imageinfo (vol.py or volatility -f mem.image imageinfo)
+            This shows the recommended OS volatility has identified
+
+--profile=
+            This is where you set the profile discovered in imageinfo
+            and append different commands to the end of the command,
+            example syntax volatility -f image –profile=Win10x64 pslist
+
+pslist
+            This shows a high-level view of running processes
+psscan
+            Scans memory for EPROCESS blocks
+pstree
+            Display parent-process relationships
+filescan
+            Scan memory for FILE_OBJECT handles
+dumpfiles
+            Extract FILE_OBJECTS from memory</code></pre>
+
+        <p class="text">There are many online resources which you can use for more information on the capabilities of Volatility.</p>
+      </div>
+
+      <div class="section" id="section-no-7-12">
+        <h2 class="heading heading-tertiary">7.12 Memory Forensics and Volatility</h2>
+
+        <p class="text">Email forensics and analysis is used to study the source and content of email messages as evidence. It is used to help identify the actual sender/date and time, subject and so on. There are a whole host of ways this can be performed, from investigating metadata, listing protocols and ports used and keyword searching.</p>
+
+        <p class="text">One other way that can be useful is utilizing techniques described in memory forensics to use Volatility to extract a '.pst' file out of memory. Pst files are personal folder files in Microsoft Outlook. They store information such as calendar events, copies of messages, notes and other items. Once extracted from memory there are tools such as 'pffexport' that can be used to browse the 'pst' file and discover various useful pieces of information including sender addresses, subjects and attachments.</p>
+      </div>
+
+      <div class="section" id="section-no-7-13">
+        <h2 class="heading heading-tertiary">7.13 Base64</h2>
+
+        <p class="text">Base 64 is an alternative number system which uses 64 as the number base. It is most commonly used as an encoding scheme to transfer data over the internet because you can rely on having the same 64 characters in most character sets. By encoding the data before transmission you can reduce the possibility of the data being interpreted as something other than data by the underlying protocol used for transmission. Here is an example of a base64 encoded ASCII string:</p>
+
+        <pre><code class="console hljs shell">SGVsbG8sIFdvcmxkIQ==</code></pre>
+      </div>
+
+      <div class="section" id="section-no-7-14">
+        <h2 class="heading heading-tertiary">7.14 Forensic Tools</h2>
+
+        <p class="text">Autopsy is an open source Digital Forensic Tool, it can be used with a GUI or just from the command line. First you must create a case and then import your desired memory image or disk image into the case. From there you can recover files from them. There are a whole host of features that Autopsy contains, such as timeline analysis, keyword searches, media playback, metadata analysis, email analysis, unicode string extraction and many more!</p>
+      </div>
+
+      <div class="section section-last">
+        <p class="text">Head <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link link-emphasis scrollto" id="no-7-1">back to the top</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz" id="section-quiz" data-token="0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8">
+    <h3 class="heading heading-tertiary heading-light heading-center">Pop quiz!</h3>
+
+    <div class="group">
+        <div class="number">Question 1.</div>
+        <div class="question">The commands <code class="code code-inline">info</code> or <code class="code code-inline">--info </code> in Steghide display information about a cover or stego file. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="forensics" data-question="40" data-answer="true" id="quiz_answer_1_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="forensics" data-question="40" data-answer="false" id="quiz_answer_1_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 2.</div>
+        <div class="question">F6 in binary is 11110101. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="forensics" data-question="41" data-answer="true" id="quiz_answer_2_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="forensics" data-question="41" data-answer="false" id="quiz_answer_2_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 3.</div>
+        <div class="question">The filter http.request would be used in Wireshark to show all HTTP GET and POST requests. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="forensics" data-question="42" data-answer="true" id="quiz_answer_3_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="forensics" data-question="42" data-answer="false" id="quiz_answer_3_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 4.</div>
+        <div class="question">The Event ID of a normal successful login event is 4620. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="forensics" data-question="43" data-answer="true" id="quiz_answer_4_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="forensics" data-question="43" data-answer="false" id="quiz_answer_4_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 5.</div>
+        <div class="question">The SAM key is the only key required when obtaining NTLM password hashes. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="forensics" data-question="44" data-answer="true" id="quiz_answer_5_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="forensics" data-question="44" data-answer="false" id="quiz_answer_5_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 6.</div>
+        <div class="question">The command <code class="code code-inline">imageinfo</code> in volatility shows the recommended Operating System. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="forensics" data-question="45" data-answer="true" id="quiz_answer_6_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="forensics" data-question="45" data-answer="false" id="quiz_answer_6_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 7.</div>
+        <div class="question">The command <code class="code code-inline">--profile=</code> in Volatility will give you a list of processes. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="forensics" data-question="46" data-answer="true" id="quiz_answer_7_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="forensics" data-question="46" data-answer="false" id="quiz_answer_7_false">False</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+  </main>
+</div>
+
+<div class="module-footer">
+  <div class="footer" id="footer"><a id="cookieSettingsLink" class="link" style="margin-right: 15px;">Cookie Settings</a>
+    <div class="discovery"><a href="https://hub.joincyberstart.com/" target="_blank" class="link" rel="noopener noreferrer">Back to main dashboard &gt;</a></div>
+    <div class="copyright">Copyright 2021 SANS Institute. Version 4.2.4</div>
+
+        <div class="signout"><a href="https://game.joincyberstart.com/logout" class="link">Sign out</a></div>
+      </div>
+</div>
+
+
+<!-- Google Analytics -->
+    <script async="" src="./CyberStart Game_files/js"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+        gtag('set', {'user_id': '0412ca06-b7fc-4bc4-a77e-77e45f6710df'});
+        gtag('config', 'UA-109525775-8');
+
+</script>
+
+    <script>
+        var hubCookies = {
+            config: {
+                "domain": "joincyberstart.com",
+                "cs_assets_host": "assets.joincyberstart.com",
+                "footer_link": {
+                    "insert_start_of_dom_id": ["footer"],
+                    "link_class_list": "link",
+                    "link_text": "Cookie Settings",
+                    "link_style": "margin-right: 15px"
+                }
+            }
+        }
+    </script>
+    <script src="./CyberStart Game_files/cookies.js.download"></script>
+    
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e8c65ea953","applicationID":"107446324","transactionName":"YFFQYkIDD0ZVAkcNVlkbZ0RZTQxUWhRSCBdHXEI=","queueTime":0,"applicationTime":77,"atts":"TBZTFAoZHEg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+<script>
+$(document).ready(function () {
+
+  // Scroll function.
+  function scrollTo(element) {
+    jQuery("html, body").animate({scrollTop: element.offset().top}, 1000);
+  }
+
+  // On click scroll to anchor.
+  $(document).on("click", ".scrollto", function () {
+    var theAnchor = $("#section-" + this.id);
+
+    scrollTo(theAnchor);
+
+    return false;
+  });
+
+  // Quiz.
+  $(".js-quiz-answer").click(function() {
+    var csrf = $('#section-quiz').data('token');
+    var questionId = $(this).data('question');
+    var answer = $(this).data('answer');
+    var chapter = $(this).data('chapter');
+
+    // Remove answer selected.
+    $(this).parent().parent().find(".option .answer").removeClass("answer-selected");
+
+    // Add tab selected.
+    $(this).addClass("answer-selected");
+
+    var xhr = xhrObj();
+    xhr.onreadystatechange = function() {
+      // On successful response...
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var responseText = xhr.responseText;
+        var responseJSON = JSON.parse(responseText);
+        checkForCSRFFail(responseJSON);
+      }
+    }
+    xhr.open("POST", "/api", true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    var params = "action=quiz_answer&chapter="+chapter+"&question="+questionId+"&answer="+answer+"&csrf="+csrf;
+    xhr.send(params);
+
+    return false;
+  });
+});
+</script>
+</body></html>

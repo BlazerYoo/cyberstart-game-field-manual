@@ -1,0 +1,769 @@
+// CS Hub cookie tracking, used by CyberStart suite of apps
+
+// Declare objects set by external services
+var ambt, fbq, _linkedin_partner_id, r, snaptr, twttr, ga, module;
+
+// Start new object plus arrays of added and not added trackers, none so far
+if (undefined === hubCookies) {
+    var hubCookies = {};
+}
+hubCookies.added = [];
+hubCookies.notAdded = [];
+
+// Get the current path
+hubCookies.currPath = location.pathname.replace(/\/+$/, "");
+
+// Set num of days before expiry on cookie choice
+hubCookies.expiryDays = 365;
+
+// Get any elem by ID
+hubCookies.get = function(elem) {
+    return top.document.getElementById(elem);
+};
+
+// Get cookie by name
+hubCookies.getCookie = function(name) {
+    name += "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (" " === c.charAt(0)) {
+            c = c.substring(1);
+        }
+        if (0 === c.indexOf(name)) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+};
+
+// Add/update cookie value
+hubCookies.setCookie = function(name, value, expiryDays) {
+    // Delete additional cookies if we're downgrading from all to required
+    if ("all" === hubCookies.getCookie("cookie-type") && "required" === value) {
+        hubCookies.deleteAllCookies();
+        // Go to pathname with search QS as a reload with any re POSTing of data
+        location.href = window.location.pathname + window.location.search;
+    }
+    var d = new Date();
+    d.setTime(d.getTime() + expiryDays * 24 * 60 * 60 * 1000);
+    var expires = "expires=" + d.toUTCString();
+    var domainString = "";
+    if ("undefined" !== typeof hubCookies.config.domain) {
+        domainString = " domain=." + hubCookies.config.domain + ";";
+    }
+    document.cookie = name + "=" + value + "; " + expires + "; path=/;" + domainString;
+};
+
+// Establish what cookie setting we have right now
+hubCookies.cookieType = hubCookies.getCookie("cookie-type");
+
+// Set cookieType
+hubCookies.setCookieType = function(type) {
+    if (-1 < ["", "all", "required"].indexOf(type)) {
+        hubCookies.cookieType = type;
+    }
+    return type;
+};
+
+// Delete all cookies aside from those we wish to keep
+hubCookies.deleteAllCookies = function() {
+    // For each of the cookies and domain parts
+    var cookies = document.cookie.split("; ");
+    for (var i = 0; i < cookies.length; i++) {
+        var domain = window.location.hostname.split(".");
+        while (domain.length > 0) {
+            // Get cookie name
+            var cookieName = encodeURIComponent(
+                cookies[i].split(";")[0].split("=")[0]
+            );
+            hubCookies.deleteCookieForPaths(domain, cookieName);
+            // Chop domain part off ready for next loop around
+            domain.shift();
+        }
+    }
+};
+
+// Delete all cookies under paths for this domain and cookie name
+hubCookies.deleteCookieForPaths = function(domain, cookieName) {
+    // If mame is not on the list of cookies we wish to keep
+    if ("undefined" !== typeof hubCookies.keepCookies && -1 === hubCookies.keepCookies.indexOf(cookieName)) {
+        // Set a new base string for the cookie, both with and without domain
+        var cookieBase =
+            cookieName +
+            "=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=" +
+            domain.join(".") +
+            "; path=";
+        var cookieBaseNoDomainSet =
+            cookieName + "=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=";
+        // For each path part, set the cookie and pop part off for next loop around
+        var path = location.pathname.split("/");
+        document.cookie = cookieBase + "/";
+        document.cookie = cookieBaseNoDomainSet + "/";
+        while (path.length > 0) {
+            document.cookie = cookieBase + path.join("/");
+            document.cookie = cookieBaseNoDomainSet + path.join("/");
+            path.pop();
+        }
+    }
+};
+
+// Add tracking code to page including any cookie params
+hubCookies.addTrackingCode = function(cookie) {
+    // Must have tracker name to add any cookie
+    if (null === cookie.name || "undefined" === typeof cookie.name) {
+        console.info(
+            "Requested tracker has no name so not going to be loaded."
+        );
+        return false;
+    }
+    // Must have tracking ID to add any cookie
+    if (
+        null === cookie.tracking_id ||
+        "undefined" === typeof cookie.tracking_id
+    ) {
+        console.info(
+            "Requested tracker '" +
+            cookie.name +
+            "' has no tracking ID (value: '" +
+            cookie.tracking_id +
+            "') so not going to be loaded."
+        );
+        hubCookies.notAdded.push(cookie.name);
+        return false;
+    }
+    switch (cookie.name) {
+        case "Ambassify":
+            hubCookies.addTrackerAmbassify(cookie);
+            break;
+        case "Facebook":
+            hubCookies.addTrackerFacebook(cookie);
+            break;
+        case "Hotjar":
+            hubCookies.addTrackerHotjar(cookie);
+            break;
+        case "LinkedIn":
+            hubCookies.addTrackerLinkedIn(cookie);
+            break
+        case "Reddit":
+            hubCookies.addTrackerReddit(cookie);
+            break;
+        case "Snapchat":
+            hubCookies.addTrackerSnapchat(cookie);
+            break;
+        case "Twitter":
+            hubCookies.addTrackerTwitter(cookie);
+            break;
+        default:
+            console.error(
+                "Requested tracker not recognised so not going to be loaded."
+            );
+    }
+};
+
+// Add tracker: Ambassify
+hubCookies.addTrackerAmbassify = function(cookie) {
+    // Add tracker with requested cookie params
+    !(function(a, m, b, s, i, f, y) {
+        if (a.ambt) return;
+        i = a.ambt = function() {
+            i.callMethod
+                ? i.callMethod.apply(i, arguments)
+                : i.q.push(arguments);
+        };
+        i.base = s;
+        i.version = 1;
+        i.q = [];
+        f = m.createElement(b);
+        f.async = !0;
+        f.src = s + "/tracker.js";
+        y = m.getElementsByTagName(b)[0];
+        y.parentNode.insertBefore(f, y);
+    })(window, document, "script", "https://forwrd.it");
+
+    ambt("init", { ac: cookie.tracking_id, p: "UA-20360645-12" });
+    ambt("conversion");
+
+    // Note we've added tracking code
+    hubCookies.added.push(cookie.name);
+};
+
+// Add tracker: Facebook
+hubCookies.addTrackerFacebook = function(cookie) {
+    !(function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+            n.callMethod
+                ? n.callMethod.apply(n, arguments)
+                : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+    })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", cookie.tracking_id);
+    fbq("track", "PageView");
+
+    if ("undefined" !== typeof cookie.extra_params.track) {
+        fbq("track", cookie.extra_params.track);
+    }
+
+    // Note we've added tracking code
+    hubCookies.added.push(cookie.name);
+};
+
+// Add tracker: Hotjar
+hubCookies.addTrackerHotjar = function(cookie) {
+    (function(h, o, t, j, a, r) {
+        h.hj =
+            h.hj ||
+            function() {
+                (h.hj.q = h.hj.q || []).push(arguments);
+            };
+        h._hjSettings = { hjid: cookie.tracking_id, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+
+    // Note we've added tracking code
+    hubCookies.added.push(cookie.name);
+};
+
+// Add tracker: LinkedIn
+hubCookies.addTrackerLinkedIn = function(cookie) {
+    _linkedin_partner_id = cookie.tracking_id;
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    (function() {
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+    })();
+
+    // Note we've added tracking code
+    hubCookies.added.push(cookie.name);
+};
+
+// Add tracker: Reddit
+hubCookies.addTrackerReddit = function(cookie) {
+    !(function(w, d) {
+        if (!w.rdt) {
+            var p = (w.rdt = function() {
+                p.sendEvent
+                    ? p.sendEvent.apply(p, arguments)
+                    : p.callQueue.push(arguments);
+            });
+            p.callQueue = [];
+            var t = d.createElement("script");
+            (t.src = "https://www.redditstatic.com/ads/pixel.js"), (t.async = !0);
+            var s = d.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(t, s);
+        }
+    })(window, document);
+    rdt("init", cookie.tracking_id);
+    rdt("track", "PageVisit");
+
+    if ("undefined" !== typeof cookie.extra_params.track) {
+        rdt("track", cookie.extra_params.track);
+    }
+    // Note we've added tracking code
+    hubCookies.added.push(cookie.name);
+};
+
+// Add tracker: Snapchat
+hubCookies.addTrackerSnapchat = function(cookie) {
+    (function(e, t, n) {
+        if (e.snaptr) return;
+        var a = (e.snaptr = function() {
+            a.handleRequest
+                ? a.handleRequest.apply(a, arguments)
+                : a.queue.push(arguments);
+        });
+        a.queue = [];
+        var s = "script";
+        r = t.createElement(s);
+        r.async = !0;
+        r.src = n;
+        var u = t.getElementsByTagName(s)[0];
+        u.parentNode.insertBefore(r, u);
+    })(window, document, "https://sc-static.net/scevent.min.js");
+
+    snaptr("init", cookie.tracking_id, {
+        user_email: hubCookies.config.user.email
+    });
+
+    snaptr("track", "PAGE_VIEW");
+
+    if ("undefined" !== typeof cookie.extra_params.track) {
+        snaptr("track", cookie.extra_params.track);
+    }
+    // Note we've added tracking code
+    hubCookies.added.push(cookie.name);
+};
+
+// Add tracker: Twitter
+hubCookies.addTrackerTwitter = function(cookie) {
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+        a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+    twq('init',cookie.tracking_id);
+    twq('track','PageView');
+
+    // Note we've added tracking code
+    hubCookies.added.push(cookie.name);
+};
+
+// Add cookie module DOM elems to page (just before </body>)
+hubCookies.addCookieModule = function() {
+    // If we already have the module, show it and return early
+    if (hubCookies.get("moduleCookie")) {
+        hubCookies.showHideCookieModule("show");
+        return false;
+    }
+
+    // Create and add (to page or containers), or create and return containers (to add into)
+    hubCookies.addCookieModuleFade();
+    var moduleContainer = hubCookies.getCookieModuleContainer();
+    hubCookies.addCookieModuleCSS();
+    var bannerContainer = hubCookies.getCookieModuleBannerContainer();
+    hubCookies.addCookieModuleCookieImg(bannerContainer);
+    hubCookies.addCookieModuleHeading(bannerContainer);
+    hubCookies.addCookieModuleTerms(bannerContainer);
+    var actionsContainer = hubCookies.getCookieModuleActionsContainer();
+    hubCookies.addCookieModuleBtnAll(actionsContainer);
+    hubCookies.addCookieModuleBtnRequired(actionsContainer);
+
+    // Add actionsContainer into bannerContainer and then that into moduleContainer
+    bannerContainer.appendChild(actionsContainer);
+    moduleContainer.appendChild(bannerContainer);
+
+    // Finally, add the moduleContainer into the end of the body
+    document.body.appendChild(moduleContainer);
+};
+
+// Add cookie module pieces
+hubCookies.addCookieModuleFade = function() {
+    // Create and add fade background
+    var fade = document.createElement("div");
+    fade.className = "fade";
+    fade.id = "fade";
+    fade.style.display = "none";
+    document.body.appendChild(fade);
+};
+
+hubCookies.getCookieModuleContainer = function() {
+    // Create module container
+    var moduleContainer = document.createElement("div");
+    moduleContainer.className = "module-cookie";
+    moduleContainer.id = "moduleCookie";
+    moduleContainer.style.display = "none";
+    return moduleContainer;
+};
+
+hubCookies.addCookieModuleCSS = function() {
+    // Create and add CSS stylesheet
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "https://" + hubCookies.config.cs_assets_host + "/assets/css/cookies.css";
+    css.onload = function() {
+        hubCookies.get("fade").style.display = "block";
+        hubCookies.get("moduleCookie").style.display = "block";
+    };
+    document.head.appendChild(css);
+};
+
+hubCookies.getCookieModuleBannerContainer = function() {
+    // Create banner container
+    var bannerContainer = document.createElement("div");
+    bannerContainer.className = "banner";
+    return bannerContainer;
+};
+
+hubCookies.addCookieModuleCookieImg = function(bannerContainer) {
+    // Create cookie container plus the image inside, then add image into container and add that into bannerContainer
+    var cookie = document.createElement("div");
+    cookie.className = "cookie";
+    var cookieImg = document.createElement("img");
+    cookieImg.src = "https://" + hubCookies.config.cs_assets_host + "/assets/images/cookie.png";
+    cookie.appendChild(cookieImg);
+    bannerContainer.appendChild(cookie);
+};
+
+hubCookies.addCookieModuleHeading = function(bannerContainer) {
+    // Create heading and add to bannerContainer
+    var heading = document.createElement("div");
+    heading.className = "heading";
+    heading.innerHTML = "CyberStart cookie policy";
+    bannerContainer.appendChild(heading);
+};
+
+hubCookies.addCookieModuleTerms = function(bannerContainer) {
+    // Create terms and add to bannerContainer
+    var terms = document.createElement("div");
+    terms.className = "terms";
+    terms.innerHTML =
+        "Cookies are necessary for CyberStart websites and tools to function correctly. " +
+        'Selecting "Allow all cookies" allows us to use your anonymised data to help improve ' +
+        'our services and provide you with an enriched experience. Selecting "Only required ' +
+        'cookies" provides us with the basic minimum required to provide you with our services.';
+    bannerContainer.appendChild(terms);
+};
+
+hubCookies.getCookieModuleActionsContainer = function() {
+    // Create actions container
+    var actionsContainer = document.createElement("div");
+    actionsContainer.className = "actions";
+    return actionsContainer;
+};
+
+hubCookies.addCookieModuleBtnAll = function(actionsContainer) {
+    // Create button for "all" choice, make clickable and add to actions container
+    var btnAll = document.createElement("a");
+    btnAll.className = "btn";
+    btnAll.id = "btnAll";
+    btnAll.innerHTML = "Allow all cookies";
+    btnAll.onclick = function() {
+        const initAfterSet = 0 === hubCookies.added.length && 0 === hubCookies.notAdded.length ? true : false;
+        hubCookies.setCookie("cookie-type", "all", hubCookies.expiryDays);
+        hubCookies.setCookieType(hubCookies.getCookie("cookie-type"));
+        hubCookies.highlightChosenOption();
+        hubCookies.showHideCookieModule("hide");
+        if (true === initAfterSet) {
+            hubCookies.init();
+        }
+    };
+    actionsContainer.appendChild(btnAll);
+};
+
+hubCookies.addCookieModuleBtnRequired = function(actionsContainer) {
+    // Create button for "required" choice, make clickable and add to actions container
+    var btnRequired = document.createElement("a");
+    btnRequired.className = "btn btn-link";
+    btnRequired.id = "btnRequired";
+    btnRequired.innerHTML = "Only required cookies";
+    btnRequired.onclick = function() {
+        const initAfterSet = 0 === hubCookies.added.length && 0 === hubCookies.notAdded.length ? true : false;
+        hubCookies.setCookie("cookie-type", "required", hubCookies.expiryDays);
+        hubCookies.setCookieType(hubCookies.getCookie("cookie-type"));
+        hubCookies.highlightChosenOption();
+        hubCookies.showHideCookieModule("hide");
+        if (true === initAfterSet) {
+            hubCookies.init();
+        }
+    };
+    actionsContainer.appendChild(btnRequired);
+};
+
+hubCookies.addCookieModuleBtnDone = function() {
+    // Create button for "Done" choice, make clickable and as last button choice
+    var btnDone = document.createElement("a");
+    btnDone.className = "btn btn-muted cookie-submit";
+    btnDone.id = "btnDone";
+    btnDone.innerHTML = "Done";
+    btnDone.onclick = function() {
+        hubCookies.showHideCookieModule("hide");
+    };
+    hubCookies
+        .get("btnRequired")
+        .parentNode.insertBefore(
+        btnDone,
+        hubCookies.get("btnRequired").nextSibling
+    );
+};
+
+hubCookies.highlightChosenOption = function() {
+    // Pickup the users cookie choice and highlight the previously chosen button
+    if (
+        "undefined" !== typeof hubCookies.cookieType &&
+        "" !== hubCookies.cookieType
+    ) {
+        // Remove default style from required button if it's there
+        hubCookies.get("btnRequired").classList.remove("btn-link");
+        if ("all" === hubCookies.cookieType) {
+            hubCookies.get("btnAll").classList.remove("btn-quiet");
+            hubCookies.get("btnRequired").classList.add("btn-quiet");
+            return hubCookies.cookieType;
+        }
+        if ("required" === hubCookies.cookieType) {
+            hubCookies.get("btnAll").classList.add("btn-quiet");
+            hubCookies.get("btnRequired").classList.remove("btn-quiet");
+            return hubCookies.cookieType;
+        }
+    }
+    return false;
+};
+
+// Show/hide the cookie module on demand with animated fade & slide effects
+hubCookies.showHideCookieModule = function(vis) {
+    if ("show" === vis) {
+        hubCookies.get("moduleCookie").style.display = "block";
+        document.body.classList.add("body-no-scroll");
+        hubCookies.get("fade").classList.remove("hide");
+        hubCookies.get("moduleCookie").classList.remove("hide");
+        return vis;
+    }
+    if ("hide" === vis) {
+        document.body.classList.remove("body-no-scroll");
+        hubCookies.get("fade").classList.add("hide");
+        hubCookies.get("moduleCookie").classList.add("hide");
+        setTimeout(function() {
+            hubCookies.get("moduleCookie").style.display = "none";
+        }, 500);
+        return vis;
+    }
+    return false;
+};
+
+// Check if a current URL path matches what the cookie requires under * or exact match conditions
+hubCookies.checkPathMatches = function(cookie, exactMatch) {
+    // Get the paths allowed by cookie config
+    var cookiePaths = Object.keys(cookie.paths);
+    // If we want an exact match and don't have it
+    if (
+        true === exactMatch &&
+        -1 === cookiePaths.indexOf(hubCookies.currPath)
+    ) {
+        return false;
+    }
+    // If we have either a * match or exact match
+    if (
+        -1 < cookiePaths.indexOf("*") ||
+        -1 < cookiePaths.indexOf(hubCookies.currPath)
+    ) {
+        return true;
+    }
+    // Nothing matched
+    return false;
+};
+
+// Check if w cookie is permitted to be injected, according to it being required or additional and the user choice
+hubCookies.checkCookiePermitted = function(cookie) {
+    // Required cookie, we're OK to permit it if cookie is set at all
+    if ("required" === cookie.type && "" !== hubCookies.cookieType) {
+        return true;
+    }
+    // Additional cookie, user must have agreed to accept all cookies
+    if ("additional" === cookie.type && "all" === hubCookies.cookieType) {
+        return true;
+    }
+    // Not permitted
+    return false;
+};
+
+// Set extra params for this cookie's path
+// plus remove paths, return what is effectively a cookie for this path
+hubCookies.setExtraParamsForPath = function(cookie) {
+    // Start new extra_params JSON object
+    cookie.extra_params = {};
+    // If we have * path config available
+    if ("undefined" !== typeof cookie.paths["*"]) {
+        // Get these general params and add into extra_params
+        var extraParamsGeneralURL = cookie.paths["*"].extra_params;
+        Object.keys(extraParamsGeneralURL).forEach(function(key) {
+            cookie.extra_params[key] = extraParamsGeneralURL[key];
+        });
+    }
+    // If we have a specific path config available and we match that path exactly
+    if (hubCookies.checkPathMatches(cookie, true)) {
+        // Get these exact params and layer ontop of extra_params, (which adds and overwrites) for this specific page
+        var extraParamsExactURL =
+            cookie.paths[hubCookies.currPath].extra_params;
+        Object.keys(extraParamsExactURL).forEach(function(key) {
+            cookie.extra_params[key] = extraParamsExactURL[key];
+        });
+    }
+    // Remove all paths config JSON object and return our revised, single cookie JSON object
+    delete cookie.paths;
+    return cookie;
+};
+
+// Check if we've added this cookie
+hubCookies.checkCookieAdded = function(cookie) {
+    return hubCookies.added.indexOf(cookie.name) > -1;
+};
+
+// Check if we couldn't add this cookie
+hubCookies.checkCookieNotAdded = function(cookie) {
+    return hubCookies.notAdded.indexOf(cookie.name) > -1;
+};
+
+// Insert cookie settings link into footer if set in config data and using those params
+hubCookies.addCookieSettingsLink = function() {
+    if (null !== hubCookies.get('cookieSettingsLink')) {
+        return hubCookies.getLinkTargetDOMElem();
+    }
+    if (
+        "undefined" !== typeof hubCookies.config &&
+        "undefined" !== typeof hubCookies.config.footer_link
+    ) {
+        // Create extra link for footer and add in at end of requested DOM ID
+        var link = document.createElement("a");
+        link.id = "cookieSettingsLink";
+        if ("undefined" !== typeof hubCookies.config.footer_link.link_class_list) {
+            link.className = hubCookies.config.footer_link.link_class_list;
+        }
+        link.innerText = hubCookies.config.footer_link.link_text;
+        if ("undefined" !== typeof hubCookies.config.footer_link.link_style) {
+            link.style = hubCookies.config.footer_link.link_style;
+        }
+        link.onclick = function() {
+            document.body.classList.add("body-no-scroll");
+            hubCookies.addCookieModule();
+            hubCookies.highlightChosenOption();
+            if (!hubCookies.get("btnDone")) {
+                hubCookies.addCookieModuleBtnDone();
+            }
+        };
+        // Establish target to inject into and if exists, append to end of it
+        var elem = hubCookies.getLinkTargetDOMElem();
+        if (elem) {
+            if ("undefined" !== typeof hubCookies.config.footer_link.insert_end_of_dom_id) {
+                elem.appendChild(link);
+            }
+            if ("undefined" !== typeof hubCookies.config.footer_link.insert_start_of_dom_id) {
+                elem.insertBefore(link, elem.childNodes[0])
+            }
+        }
+    }
+    return elem;
+};
+
+// Establish where to insert footer link
+hubCookies.getLinkTargetDOMElem = function() {
+    // Look for a specific DOM elem being available
+    var elem = hubCookies.getLinkTargetDOMElemById();
+    // If nothing specific, look for a fallback placement
+    if (!elem) {
+        elem = hubCookies.getLinkTargetDOMElemFallback();
+    }
+    return elem;
+};
+
+// If a specified target DOM elem exists, return it else return false
+hubCookies.getLinkTargetDOMElemById = function() {
+    var elem = false;
+    var elems = hubCookies.config.footer_link.insert_end_of_dom_id || hubCookies.config.footer_link.insert_start_of_dom_id;
+    if ("undefined" !== typeof elems) {
+        // Detect if the DOM elem exists
+        for (var i = 0; i < elems.length; i++) {
+            if (hubCookies.get(elems[i])) {
+                // It does, can set to that
+                elem = hubCookies.get(elems[i]);
+                break;
+            }
+        }
+    }
+    return elem;
+};
+
+// Look for a fallback placement for link
+hubCookies.getLinkTargetDOMElemFallback = function() {
+    var elem = false;
+    var footerDOM = document.getElementsByClassName("module-footer")[0];
+    if (footerDOM) {
+        var footerDOMElems = footerDOM.children;
+        var DOMElemNum = footerDOMElems.length - 1;
+        if (
+            0 < DOMElemNum &&
+            -1 < footerDOMElems[DOMElemNum].innerHTML.indexOf("Copyright")
+        ) {
+            DOMElemNum--;
+        }
+        if (footerDOMElems[DOMElemNum]) {
+            elem = footerDOMElems[DOMElemNum];
+        }
+    }
+    return elem;
+};
+
+hubCookies.refreshTrackerData = function() {
+    var cookies = document.cookie.split("; ");
+    // Keep our cookie-type setting plus GA's _ga and _gid
+    hubCookies.keepCookies = ["cookie-type", "_ga", "_gid"];
+    // Also add in GA's gtag cookie after we discover name
+    for (var i = 0; i < cookies.length; i++) {
+        if (0 === cookies[i].search(/^_gat_gtag_/)) {
+            hubCookies.keepCookies.push(cookies[i]);
+        }
+    }
+};
+
+// Init cookie system
+hubCookies.init = function() {
+    // Get the cookies and for each of them...
+    if ("undefined" !== typeof hubCookies.config.cookies) {
+        var cookies = Object.keys(hubCookies.config.cookies);
+        for (var i = 0; i < cookies.length; i++) {
+            // Start a new single cookie, with data from original JSON object
+            var cookie = JSON.parse(
+                JSON.stringify(hubCookies.config.cookies[cookies[i]])
+            );
+            // Set the name for this cookie
+            cookie.name = cookies[i];
+            // Check if we have any path matches, if cookies are permitted and if we've added the cookie yet
+            var pathMatches = hubCookies.checkPathMatches(cookie, false);
+            var cookiePermitted = hubCookies.checkCookiePermitted(cookie);
+            var cookieAdded = hubCookies.checkCookieAdded(cookie);
+            // If we have a matching path, the cookie may be added and we haven't added it yet
+            if (
+                true === pathMatches &&
+                true === cookiePermitted &&
+                false === cookieAdded
+            ) {
+                // Rejig data for a single cookie structure
+                cookie = hubCookies.setExtraParamsForPath(cookie);
+                // Add the cookie
+                hubCookies.addTrackingCode(cookie);
+            }
+        }
+    }
+    // No cookie value yet? Add the cookie module and 0.7s later, show it
+    if ("" === hubCookies.cookieType) {
+        document.body.classList.add("body-no-scroll");
+        setTimeout(function() {
+            hubCookies.addCookieModule();
+        }, 700);
+    }
+    // Add link to footer
+    hubCookies.addCookieSettingsLink();
+};
+
+if ("undefined" !== typeof hubCookies.config) {
+    hubCookies.init();
+}
+
+if ("undefined" === typeof hubCookies.config) {
+    console.error("hubCookies.config not available, aborting use");
+}
+
+// Get a list of cookie names we wish to keep (incl Analytics) when clearing cookies away
+setInterval(function() {
+    hubCookies.refreshTrackerData();
+}, 1000);
+
+if (typeof module === "object") {
+    // Used to allow for testing node environment
+    module.exports = {
+        hubCookies: hubCookies
+    };
+}

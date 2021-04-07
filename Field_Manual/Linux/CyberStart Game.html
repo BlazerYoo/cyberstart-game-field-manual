@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="charset" content="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"><script src="./CyberStart Game_files/nr-1208.min.js.download"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQMHV1dQDRABVFZWAwcEVFA=",licenseKey:"e8c65ea953",applicationID:"107446324"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(24),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(25),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(25),a=t(24);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(21),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(24),c=t(25),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(26);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],20:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(23),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],21:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],22:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],23:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],24:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],25:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],26:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(24),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(y,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=t(18),c=t("handle"),s=t(24),f=t("ee"),u=t(22),d=t(19),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;if(d(l.location)){NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:x,userAgent:u};t(15),t(20),p[h]?(p[h]("DOMContentLoaded",o,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",i),l[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(25),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
+    <title>CyberStart Game</title>
+    <link type="text/css" rel="stylesheet" media="all" href="./CyberStart Game_files/styles.f4a8c688e96da30d3af8545a87dd1625.css">
+    <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        document.write('<script src="/assets/js/vendors/promise-polyfill.006f3795a9680e46c19e.js"><\/script>');
+    }
+    </script>
+    <script src="./CyberStart Game_files/jquery.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/highlight.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/confetti.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/event-stream.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/other.006f3795a9680e46c19e.js.download"></script>
+
+    
+    <link rel="apple-touch-icon-precomposed" href="https://game.joincyberstart.com/assets/images/apple-touch-icon.png?version=4.2.4">
+    <link rel="icon" type="image/png" href="https://game.joincyberstart.com/assets/images/apple-touch-icon.png?version=4.2.4">
+    <link rel="shortcut icon" href="https://game.joincyberstart.com/assets/images/favicon.ico?version=4.2.4">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+            <noscript>
+            <style>html {
+                    display: none;
+                }</style>
+            <meta http-equiv="refresh" content="0;url=/no-javascript">
+        </noscript>
+    </head>
+
+<body class="body vsc-initialized">
+
+
+    <div id="badge-modal" class="module-notification" style="display: none;"></div>
+
+    <div class="black-mask" id="blackMask"></div>
+    <div class="black-mask-modal" id="blackMaskModal"></div>
+    <div class="btn black-mask-btn" id="blackMaskBtn"></div>
+
+
+<div class="page page-standard page-navbar page-manual">
+  <nav class="module-navbar">
+    <div class="links">
+      <a href="https://game.joincyberstart.com/welcome" class="link">Welcome</a>
+
+      <a href="https://game.joincyberstart.com/manual" class="link">Field manual</a>
+
+                <a href="https://game.joincyberstart.com/base-select" class="link">Bases</a>
+            </div>
+
+    <div class="logo">
+  <a href="https://game.joincyberstart.com/base-select" class="link"><img src="./CyberStart Game_files/asset-game-logo-inside-02.png" alt="CyberStart Game" class="image"></a>
+</div>
+
+    <div class="info">
+    <div class="item">
+        <a href="https://game.joincyberstart.com/profile" class="link">View profile</a>
+    </div>
+
+    
+    <div class="item badges">22 badges</div>
+
+    <div class="item progress">62% complete</div>
+
+    <div class="item points">83,500 pts</div>
+</div>
+  </nav>
+  <main class="module-manual">
+    <div class="links">
+              <a href="https://game.joincyberstart.com/manual?chapter=01&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-introduction">
+        <span class="number">01</span>
+        <span class="name">Introduction</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-linux">
+        <span class="number">02</span>
+        <span class="name">Linux</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-programming">
+        <span class="number">03</span>
+        <span class="name">Programming</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=04&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-web">
+        <span class="number">04</span>
+        <span class="name">Web</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=05&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-binary">
+        <span class="number">05</span>
+        <span class="name">Binary</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=06&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-cryptography">
+        <span class="number">06</span>
+        <span class="name">Cryptography</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-forensics">
+        <span class="number">07</span>
+        <span class="name">Forensics</span>
+      </a>
+            </div>
+
+    <div class="chapter chapter-02"><div class="chapter chapter-02">
+  <div class="topper topper-linux">
+    <div class="number">Chapter 02</div>
+
+    <h2 class="heading heading-secondary heading-center heading-light">Linux</h2>
+  </div>
+
+  <div class="illustration" style="background-image: url(&#39;/assets/images/asset-game-manual-linux-01.png?version=4.2.4&#39;);"></div>
+
+  <div class="columns">
+    <div class="sections">
+      <h3 class="heading heading-quaternary">Chapter sections</h3>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-1"><span class="number">2.1</span> Introduction</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-2"><span class="number">2.2</span> Terminal</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-3"><span class="number">2.3</span> List</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-4"><span class="number">2.4</span> Change Directory</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-5"><span class="number">2.5</span> Move</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-6"><span class="number">2.6</span> Copy</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-7"><span class="number">2.7</span> Manual</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-8"><span class="number">2.8</span> Display Contents / Concatenate</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-9"><span class="number">2.9</span> Grep</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-10"><span class="number">2.10</span> Running Programs</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-11"><span class="number">2.11</span> Permissions</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-12"><span class="number">2.12</span> Stopping Programme Execution</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-13"><span class="number">2.13</span> Redirection and Wildcards</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-14"><span class="number">2.14</span> Find</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-15"><span class="number">2.15</span> Processes</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-16"><span class="number">2.16</span> History</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-17"><span class="number">2.17</span> Netcat</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-18"><span class="number">2.18</span> Scripting</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-2-19"><span class="number">2.19</span> Secure Shell</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="quiz">Quiz</a>
+    </div>
+
+    <div class="content">
+      <div class="section" id="section-no-2-1">
+        <h2 class="heading heading-tertiary">2.1 Introduction</h2>
+
+        <p class="text">Linux is an operating system (like Windows). It is free and open source, which means that anyone can look through its code. It gets its name from Linus Torvalds, the creator of the Linux kernel. The kernel is the core of the operating system. There are many different Linux operating systems, called distributions. Some of the most widely used ones are Red Hat, Ubuntu and Debian. All Linux distributions have one thing in common: they are all built around the Linux kernel.</p>
+
+        <p class="text">Getting to know Linux is very important, as most security tools that you will get to know and use are built for the Linux operating system. Some may have Windows versions but, for the most part in the security community, Linux is the dominant operating system. We will mainly be using the Linux command line, which is called the Terminal.</p>
+
+        <p class="text">Before we go into the usage of the Terminal, there are some important key points to learn that many people trip up on at the beginning. There are also some tips that can make life much easier for you.</p>
+
+        <ul class="list">
+          <li class="list-item">Linux is case sensitive. That means the folder 'Hello' and the folder 'HELLO' are entirely different folders.</li>
+
+          <li class="list-item">Linux does not like spaces in file or folder names. It's common to use an underscore '\_' where you would usually put a space.</li>
+
+          <li class="list-item">The Linux Terminal has tab completion. This means that you can start typing, press the tab key part of the way through and it will guess what you were typing. So if there was a file in the directory called 'passwords' and you typed <code class="code code-inline">pass</code> and pressed 'tab', it would fill in <code class="code code-inline">passwords</code> for you. On the other hand, if there were too many matches it would not complete. E.g if there were two files, 'passports' and 'passwords', and you typed <code class="code code-inline">pass</code>, it would not know which you meant so it would not autocomplete until you typed the next letter and pressed 'tab' again.</li>
+
+          <li class="list-item">You can use the up arrow or down arrow keys in the Terminal. The 'up arrow' will take you to the previously typed command; you can keep going further and further back up to a certain point. Once you've gone back, you can use 'down arrow' to scroll through to the more recent commands.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="section-no-2-2">
+        <h2 class="heading heading-tertiary">2.2 Terminal</h2>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250241839.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+
+        <p class="text">Linux is not focused on the GUI (Graphical User Interface). While many Linux distributions do come with a GUI, it is usually more of an afterthought. Anything you can do on Linux can be done from the Terminal. More importantly, once you become comfortable using the Linux Terminal, you will find that many things are actually easier or faster to do from the Terminal. You may one day find yourself opening the Terminal to copy files from one location to another, instead of opening the file browser.</p>
+
+        <p class="text">The first step in using the Terminal is, of course, to open the Terminal application. There should be an icon for the Terminal at the top of the screen. Or you can find it under "Accessories" in the Main Menu. Once you have it open, you will be greeted by some text on a black screen. This text is called the prompt.</p>
+
+        <p class="text">The prompt will be in this format:</p>
+
+        <pre><code class="language-console hljs shell">username@hostname location $</code></pre>
+
+        <p class="text">So in your case it will most likely look like this:</p>
+
+        <pre><code class="language-console hljs shell">agent@cpa ~ $</code></pre>
+
+        <p class="text">The <code class="code code-inline">~</code> is just a short way of indicating that you are in the home folder. The hostname is just the name of the computer. It may seem obvious now which computer you are using but it isn't always. If you are connecting remotely and you have many sessions open to many different computers, the reminder can be helpful. The <code class="code code-inline">$</code> sign indicates the end of the prompt. Anything after the <code class="code code-inline">$</code> is a command that you can type. The prompt is called the prompt because it means the Terminal is ready for input. If you run a program from the Terminal and you don't see the prompt, this means that the program is still working and the Terminal isn't ready for another command yet.</p>
+
+        <p class="text">Now we'll end this section on an important note, which will be repeated frequently throughout the field manual:</p>
+
+        <p class="text"><strong>Important Note:</strong> Linux is case sensitive! Unlike in Windows, the files 'password', 'PASSWORD', 'Password' and 'PaSSwOrD' are all different files.</p>
+      </div>
+
+      <div class="section" id="section-no-2-3">
+        <h2 class="heading heading-tertiary">2.3 List (ls)</h2>
+
+        <p class="text">Now that you have the Terminal open and are at the prompt, you may be wondering how you can start to navigate around. The first thing to do would be to look in the current folder to see what exists. You can LIST all the files and folders in the current directory by typing <code class="code code-inline">ls</code> and pressing enter. It's easy to remember if you just think ls stands for list.</p>
+
+        <p class="text">Many commands can take arguments. Each command has a full list of arguments that it accepts in its <code class="code code-inline">man page</code> but we will cover some of the more common usage examples here.</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -l</span></code></pre>
+
+        <p class="text">Shows the list of files and folders in long form. Here you can see who owns the files and folders, what the permissions are (who can access them and do what i.e read, write, execute). You can also see the date modified and file size (in bytes).</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -a</span></code></pre>
+
+        <p class="text">Shows hidden files. In Linux, putting a ' . ' at the beginning of a file or folder name turns it into a hidden file/folder. If you type ls -a, it will show you all the files/folders including the hidden ones.</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -t</span></code></pre>
+
+        <p class="text">Lists the files and folders in order of date modified - most recent first.</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -alt</span></code></pre>
+
+        <p class="text">In Linux, arguments can be combined together. For example the above, which is a combination of all the options we covered.</p>
+      </div>
+
+      <div class="section" id="section-no-2-4">
+        <h2 class="heading heading-tertiary">2.4 Change Directory (cd)</h2>
+
+        <p class="text">Now that you can list all the files and folders in your current location, how can you move about the filesystem? Well, this is where the cd command comes in. It stands for 'Change Directory'. A directory is the Linux name for a folder and we'll be using it from now on instead of 'folder'.</p>
+
+        <p class="text">To enter a directory, just type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> directoryname</span></code></pre>
+
+        <p class="text">You can also go back a directory by typing:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> ..</span></code></pre>
+
+        <p class="text">The <code class="code code-inline">..</code> directory is available in every directory and it just represents the directory above. So if you were in <code class="code code-inline">/home/agent/Desktop</code> then the <code class="code code-inline">..</code> directory references <code class="code code-inline">/home/agent</code>. It's a hidden directory (because it starts with a '.') but if you use <code class="code code-inline">ls -a</code> to view hidden files you will be able to see it in the list. You might also notice a '.' directory. This actually represents the current directory.</p>
+
+        <p class="text">You don't necessarily have to go just one directory down. If you know the whole path you can do lots at once. In Linux, directories are separated by a '/' as opposed to a '\\' in Windows.</p>
+
+        <p class="text">So, for example, you could do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /home/agent/Desktop</span></code></pre>
+      </div>
+
+      <div class="section" id="section-no-2-5">
+        <h2 class="heading heading-tertiary">2.5 Move (mv)</h2>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250244469.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+
+        <p class="text">OK, so now you want to move a file from one location to another location. You can use the <code class="code code-inline">mv</code> command. It stands for 'move', so it's easy to remember.</p>
+
+        <p class="text">Imagine you have a file here, called 'file.txt', and you want to move it to <code class="code code-inline">/home/agent/Desktop/</code>.</p>
+
+        <p class="text">The command would be:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> mv file.txt /home/agent/Desktop/file.txt</span></code></pre>
+
+        <p class="text">It's really important that you put the file name in the location that you want the file to be moved to. That's because you can also use mv to rename a file. For example:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> mv file.txt new_file_name.txt</span></code></pre>
+
+        <p class="text">That would keep the file in the same place but change the name of it.</p>
+      </div>
+
+      <div class="section" id="section-no-2-6">
+        <h2 class="heading heading-tertiary">2.6 Copy (cp)</h2>
+
+        <p class="text">OK, so what if you don't want to move something and you just want to copy it instead? The <code class="code code-inline">cp</code> command will help you here!</p>
+
+        <p class="text">The <code class="code code-inline">cp</code> command will make a copy of a file in the location you specify but it will keep the original file intact.</p>
+
+        <p class="text">The usage is like this:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cp file.txt /home/agent/Desktop/file.txt</span></code></pre>
+
+        <p class="text">This will copy the file into the user's Desktop folder. You could also change the filename with:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cp file.txt /home/agent/Desktop/new_file_name.txt</span></code></pre>
+
+        <p class="text">You can also copy a folder and not just a file, but you'll need to add the <code class="code code-inline">-r</code> parameter to make it recursive (applicable to folders and subfolders):</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cp -r folder /home/agent/Desktop/folder_copy</span></code></pre>
+      </div>
+
+      <div class="section" id="section-no-2-7">
+        <h2 class="heading heading-tertiary">2.7 Manual (man)</h2>
+
+        <p class="text">An important habit to get into when working with the Terminal is reading the manual for any programs that you are running. Every command that you can run from the Terminal is actually a program and they all have manuals. Usually, there are a lot more options than you think and most of them have their uses.</p>
+
+        <p class="text">To read the manual for a program just type <code class="code code-inline">man programname</code> and press 'enter'.</p>
+
+        <p class="text">This will bring up the manual page for that program. You can use the arrow keys to scroll up or down through the manual. To exit the manual page, just press <code class="code code-inline">q</code> on the keyboard.</p>
+
+        <p class="text">These manuals are called <code class="code code-inline">man pages</code>. Since every command you can run from the Terminal is actually a program, the command man is actually a program also. It even has a man page. So you can even type <code class="code code-inline">man man</code>.</p>
+
+        <p class="text">Now let's get a little practice in reading man files. We covered the basic usage of the <code class="code code-inline">ls</code> command in a previous chapter but let's take a look at its man file. So type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> man ls</span></code></pre>
+
+        <p class="text">You will see:</p>
+
+        <pre><code class="language-console hljs shell">Name
+ls - list directory contents</code></pre>
+
+        <pre><code class="language-console hljs shell">Synopsis
+ls [OPTION]... [FILE]...</code></pre>
+
+        <p class="text">Interestingly, we can see that the <code class="code code-inline">ls</code> command can take arguments. What this means is that you can either type <code class="code code-inline">ls</code> on its own, or you can combine it with various other options. Looking below under the 'Description' heading, you will see a list of the options.</p>
+
+        <p class="text">If you keep scrolling down with the arrow keys, you will find one of the options is <code class="code code-inline">-l</code>. The description of that option is: 'use a long listing format'. Let's try it. Press 'q' to exit the man page and type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls</span></code></pre>
+
+        <p class="text">and press 'enter'.</p>
+
+        <p class="text">Now type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -l</span></code></pre>
+
+        <p class="text">and press 'enter'.</p>
+
+        <p class="text">You will see that using the <code class="code code-inline">-l</code> argument changed the output of the ls command quite a bit. In fact, using <code class="code code-inline">-l</code> will allow you to see who owns the file or directory, what the permissions are and so on.</p>
+
+        <p class="text">Now if you look in the man page once again you will find another option: <code class="code code-inline">-t</code>. <code class="code code-inline">-t</code> sorts the files and directories by date modified from newest to oldest. Let’s combine <code class="code code-inline">-l</code> with <code class="code code-inline">-t</code>.</p>
+
+        <p class="text">If we wanted to, we could do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -l -t</span></code></pre>
+
+        <p class="text">But that's the long way of writing it out. It's much more common to just type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls -lt</span></code></pre>
+
+        <p class="text">Now if you look back at the Synopsis, you will see it mentions [FILE]. What does this mean?</p>
+
+        <p class="text">It can be a little confusing, but in Linux everything is considered a file. Files are files, directories are files... everything is a file. So when it says [FILE] it really means a directory.</p>
+
+        <p class="text">So if you were to type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls Directory</span></code></pre>
+
+        <p class="text">It would list all the files in the 'Directory' directory.</p>
+
+        <p class="text">Because everything is considered a file, if you were to try it on a file, you wouldn't get an error.</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls File</span></code></pre>
+
+        <p class="text">This would just give you the file name of 'File'.</p>
+      </div>
+
+      <div class="section" id="section-no-2-8">
+        <h2 class="heading heading-tertiary">2.8 Display Contents / Concatenate (cat)</h2>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250254840.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+
+        <p class="text">The cat command is a bit of a weird one. It's short for 'concatenate' so it can be used to join two files together. By far its most common usage, however, is to just display text files on the screen without having to open a text editor.</p>
+
+        <p class="text">To show the contents of a text file you can just do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat filename</span></code></pre>
+
+        <p class="text">...and the contents of the text file will be printed to the Terminal.</p>
+
+        <p class="text">If you want to use it to join two files together you can do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat filename1 filename2</span></code></pre>
+
+        <p class="text">It's important to note that this will join the two text files together and print the result to the Terminal; it won't overwrite the files or save the changes to the files.</p>
+
+        <div class="illustration-inline" style="background-image: url(&#39;/assets/images/asset-game-manual-inline-03.png?version=4.2.4&#39;);"></div>
+
+        <p class="text">If you want to actually use it to create a new file by combining two files, you need to use 'redirection'. Redirection is not unique to the cat command; it's available everywhere in the Terminal. Using redirection, you can take the result of any command that is printed to the Terminal and redirect the output to a file. The 'redirection' character is <code class="code code-inline">&gt;</code> or <code class="code code-inline">&gt;&gt;</code>. <code class="code code-inline">&gt;</code> will output the contents to a file and, if the file already exists, will overwrite that file. <code class="code code-inline">&gt;&gt;</code> will output the contents to a file and, if the file already exists, will just add it to the end of the file.</p>
+
+        <p class="text">So you could do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat filename1 filename2 &gt; new_file</span></code></pre>
+
+        <p class="text">...or:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat filename1 filename2 &gt;&gt; appended_file</span></code></pre>
+
+        <p class="text">You don't necessarily have to cat only two files you can do it with as many as you like:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat filename1 filename2 filename3</span></code></pre>
+
+        <p class="text">Or you can use the wildcard operator `*`. The wildcard operator allows you to match any files. For example:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat *</span></code></pre>
+
+        <p class="text">This would cat all the files in the current directory together.</p>
+
+        <p class="text">You can also combine it with text, so:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat *.txt</span></code></pre>
+
+        <p class="text">This would cat together all the files that end in .txt.</p>
+
+        <p class="text">This also is not specific only to cat; you can use the wildcard operator in other commands also.</p>
+      </div>
+
+      <div class="section" id="section-no-2-9">
+        <h2 class="heading heading-tertiary">2.9 Grep</h2>
+
+        <p class="text">Unlike the other commands that we've covered so far, grep doesn't stand for something simple. It actually stands for 'Globally Search a Regular Expression and Print'. This sounds scary but it isn't. It basically lets you search for words in files.</p>
+
+        <p class="text">Typical usage would be:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> grep searchquery filename</span></code></pre>
+
+        <p class="text">This would look for the word 'searchquery' in the file filename and if it finds the word there, it will print out the line it found the word on.</p>
+
+        <p class="text">It's really useful if you want to look in large files for something. It can also be useful if you're looking in a lot of files for one particular thing.</p>
+
+        <p class="text">Using the wildcard operator `*`, which we learned about in the section on cat, we can actually do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> grep password *.txt</span></code></pre>
+
+        <p class="text">This would look in all the files in the current directory that end in .txt and print out any lines with the word 'password' in them. Imagine doing that by hand from the GUI if you had more than ten files that end in .txt!</p>
+
+        <p class="text">This is a good place to learn about the pipe <code class="code code-inline">|</code> operator. That isn't a lowercase 'L', that's the straight line character, which is called the pipe. The pipe lets you redirect output from one command into another command. This is similar to the <code class="code code-inline">&gt;</code> character, which redirects to a file, but instead the <code class="code code-inline">|</code> character allows you to redirect to the input of another command.</p>
+
+        <p class="text">So for example, if instead of the contents of the files, you wanted to search for a filename you could do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls | grep filename</span></code></pre>
+
+        <p class="text">That would first run the ls command but it won't print the output to the screen. Instead, it will send the output to grep.</p>
+
+        <p class="text">Now you know that the usage for grep is <code class="code code-inline">grep searchterm thingtosearch</code>. In this case, we already have <code class="code code-inline">grep searchterm</code>, so the output of the ls command is redirected to be the thing to search.</p>
+
+        <p class="text">You can probably guess that this will search for the searchterm (in this case filename) in the output of the ls command and it will print the filename to the screen if it finds it. If it doesn't find it, it will print nothing to the screen.</p>
+
+        <p class="text">Grep, like most things in Linux is case sensitive. That means you need to know exactly what case the text you are searching for is in. If you'd like Grep to ignore the case when matching text, you can use the -i parameter like so:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> grep -i <span class="hljs-string">"bob"</span> filename</span></code></pre>
+
+        <p class="text">This will match on 'bob', 'Bob', 'BOB' or any combination, even 'BoB'.</p>
+
+        <p class="text">You can also have grep search in all files under a directory with the 'recursive' option, -r:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> grep -r <span class="hljs-string">"stuff"</span> folder</span></code></pre>
+
+        <p class="text">Which will look in 'folder' and all subfolders, reading all the files contained there to find a match for 'stuff'.</p>
+      </div>
+
+      <div class="section" id="section-no-2-10">
+        <h2 class="heading heading-tertiary">2.10 Running Programs</h2>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250263900.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+
+        <p class="text">When you type <code class="code code-inline">cd</code> or <code class="code code-inline">ls</code> or any of the other commands we have run so far, it's important to understand what happens. Those commands are all programs and they're stored in a variety of places on the filesystem. One thing they all have in common is that they are all stored somewhere in the PATH.</p>
+
+        <p class="text">The PATH is just a variable (or setting if you prefer) that tells the computer where to look for programs. You can see your PATH if you type echo $PATH. Echo is a program that just outputs something. You could type <code class="code code-inline">echo echo</code> and it would output <code class="code code-inline">echo</code> to the Terminal. But because $PATH is a variable, echo will output the contents to the screen. In this case, it will output a whole bunch of directory paths separated by a ' : '. The way it works is, when you type a command, it will look for the program in those directories starting with the first one in the list. If it doesn't find it there, it will move on to the next directory and so on. If it doesn't find the program in any of them, it will give you a 'command not found' error.</p>
+
+        <p class="text">So, what do you do if you want to run a program directly, instead of having to install it by putting it into one of those directories first? The most common way to do it is to use:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ./programname</span></code></pre>
+
+        <p class="text">This says, look in the directory I'm currently in and run the program with this name.</p>
+
+        <p class="text">Alternatively you can do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ./directory/programname</span></code></pre>
+
+        <p class="text">This executes a program in a different sub-directory. And if you'd like to execute a program somewhere else entirely:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> /directory/programname</span></code></pre>
+
+        <p class="text">Notice the lack of a '.' here? You may remember we mentioned earlier that '.' stands for the current directory, so a path that starts with a . will be relative to the current directory. A path that starts with a / will be relative to the root of the file system.</p>
+
+        <p class="text">You can also run two commands on a single line in the terminal, you just have to separate them with a <code class="code code-inline">;</code> character, like so:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">"Hello"</span>; <span class="hljs-built_in">echo</span> <span class="hljs-string">"World"</span></span></code></pre>
+
+        <p class="text">And if you're building a long command, you might want to put it on two lines for neatness. You can do this with the <code class="code code-inline">\</code> character like so:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">"Hello "</span>\</span>
+"World"</code></pre>
+
+        <p class="text">If you hit enter after the <code class="code code-inline">\</code> you can continue the command on the next line and it will be considered one long line. It can be neater to write long commands like this.</p>
+      </div>
+
+      <div class="section" id="section-no-2-11">
+        <h2 class="heading heading-tertiary">2.11 Permissions (chmod)</h2>
+
+        <p class="text">You've just downloaded a program, you've tried to run it and it tells you 'Permission denied'. What's going on? Well, it comes down to permissions. By default, the program you downloaded does not have 'execute' permissions. We need to assign those permissions first.</p>
+
+        <p class="text">You will be using a program called chmod to change the permissions on the file here. The easiest way would be to use:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> chmod +x program</span></code></pre>
+
+        <p class="text">Here the +x basically means, give execute permissions where the 'x' stands for execute.</p>
+
+        <p class="text">You could also do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> chmod -x program</span></code></pre>
+
+        <p class="text">This would remove execute permissions.</p>
+
+        <p class="text">Or:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> chmod +w file</span></code></pre>
+
+        <p class="text">This adds write permissions, and so on. Using chmod this way is the most basic way to manage permissions. There are more complex methods but we won't be covering them here.</p>
+      </div>
+
+      <div class="section" id="section-no-2-12">
+        <h2 class="heading heading-tertiary">2.12 Stopping Program Execution</h2>
+
+        <div class="illustration-inline" style="background-image: url(&#39;/assets/images/asset-game-manual-inline-04.png?version=4.2.4&#39;);"></div>
+
+        <p class="text">You have a program running and you realise that you ran it by mistake, or it's not doing what you wanted. What do you do? Do you have to wait for the program to stop running? Do you close you Terminal window and open a new one?</p>
+
+        <p class="text">The answer is no, that's entirely unnecessary. Just press CTRL+C to cancel the running process. This will interrupt the program and stop the execution.</p>
+
+        <p class="text">You may sometimes want to pause a task to go do something else. You can do this with CTRL + Z. This will pause the program that was running, and let you use the prompt again. Once the program is paused, you can either:</p>
+
+        <ol class="list">
+          <li class="list-item">Let it continue running in the background. You'll be able to use the prompt to do other things, but the program will send output to your terminal in the meantime. You do this by typing <code class="code code-inline">bg</code>, to send the paused task to the background.</li>
+
+          <li class="list-item">Bring the paused task back to the foreground using <code class="code code-inline">fg</code>. This will resume the task from the point where you paused it with CTRL + Z.</li>
+        </ol>
+
+        <p class="text">If you sent a task to the background to continue running, you can bring it back to the foreground again by typing <code class="code code-inline">fg</code>.</p>
+
+        <p class="text">Most of the time, you'll want to create a new terminal window, but on a remote system where you've connected with SSH you may only have the one shell available, so you can multi-task by using <code class="code code-inline">bg</code> and <code class="code code-inline">fg</code>.</p>
+      </div>
+
+      <div class="section" id="section-no-2-13">
+        <h2 class="heading heading-tertiary">2.13 Redirection and Wildcards</h2>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250267314.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+
+        <p class="text">The first type of redirection is 'file redirection'. When you run a command that outputs some results to the Terminal, you can redirect that output to a file.</p>
+
+        <p class="text">There are two file redirection operators. The first is <code class="code code-inline">&gt;</code>. This operator will output the results of the command before it to a text file that you name after it. If the text file already exists, it will overwrite it, so be careful!</p>
+
+        <p class="text">Example usage:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat filename1 filename2 &gt; new_file</span></code></pre>
+
+        <p class="text">You can also use file redirection to append to an existing file by using the <code class="code code-inline">&gt;&gt;</code> operator. This will either create a new file, if the file doesn't already exist, or, if the file does exist, it will add the output to the end of the file.</p>
+
+        <p class="text">Example usage:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat filename1 filename2 &gt;&gt; existing_file</span></code></pre>
+
+        <p class="text">There is an interesting form of file redirection that is worth mentioning. In Linux, there are two types of output. Standard Output (stdout) and Standard Error (stderr). As they sound, one is for normal output and the other is for outputting errors. When you redirect, you are redirecting only stdout by default. You can redirect stderr instead by doing <code class="code code-inline">2&gt;</code> or <code class="code code-inline">2&gt;&gt;</code>. If you want to redirect both stdout and stderr then you need to do <code class="code code-inline">&amp;&gt;</code> or <code class="code code-inline">&amp;&gt;&gt;</code>.</p>
+
+        <p class="text">The second type of redirection is 'input redirection'. You can redirect the output of a command into the input of another command. For example, you could type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ls | grep password.txt</span></code></pre>
+
+        <p class="text">This would do an ls to list all the files in the directory but it wouldn't output them to the Terminal. Instead, it will take that output and send it to the next command, which is grep. Grep would search the output for password.txt and, if it found it, it would print password.txt to the Terminal. If it didn't find anything, it wouldn't print anything to the Terminal.</p>
+
+        <p class="text">Finally, let's look at the wildcard operator. The wildcard operator can stand for anything. So if you were to do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat *</span></code></pre>
+
+        <p class="text">...it would print the contents of all the files in the current directory, one after the other.</p>
+
+        <p class="text">If you only wanted files that start with the word 'pass' then you could type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat pass*</span></code></pre>
+
+        <p class="text">Then only files that start with 'pass' would be printed to the screen.</p>
+
+        <p class="text">You could also do the opposite:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> cat *.txt</span></code></pre>
+
+        <p class="text">This would print all the files that end in .txt.</p>
+      </div>
+
+      <div class="section" id="section-no-2-14">
+        <h2 class="heading heading-tertiary">2.14 Find (find)</h2>
+
+        <p class="text">The find command is one of the most useful and most frustrating commands on Linux. It will definitely trip you up if you are not careful. It's mentioned here after the section on redirection for a reason. You will need to read Section 1.9 carefully before this section can be understood.</p>
+
+        <p class="text">The find command can, unsurprisingly, be used to search for files.</p>
+
+        <p class="text">You can type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> find [location to search] [how to search] [what to search]</span></code></pre>
+
+        <p class="text">For example you can type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> find / -name <span class="hljs-string">"passwords"</span></span></code></pre>
+
+        <p class="text">...to look for every folder on the filesystem for files called 'passwords'.</p>
+
+        <p class="text">If you type that, you will be sure to get lots of errors about permissions. That's because as a normal user, you don't have permission to go to many of those places. The best thing to do is to ignore those errors. To do that, you need to redirect stderr to a file.</p>
+
+        <p class="text">You can just redirect it to any file and then delete the file. Or you can redirect it to <code class="code code-inline">/dev/null</code>. <code class="code code-inline">/dev/null</code> basically means nowhere.</p>
+
+        <p class="text">So a cleaner way of searching would be:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> find / -name <span class="hljs-string">"passwords"</span> 2&gt; /dev/null</span></code></pre>
+
+        <p class="text">This would only show you results you have permission to access and hide any permission denied errors from you.</p>
+
+        <p class="text">The find command is massive, and it takes many other arguments than just <code class="code code-inline">-name</code>. We won't go into all of them here, but now that you know how to read man pages, <code class="code code-inline">man find</code> should be extremely helpful in listing them all.</p>
+      </div>
+
+      <div class="section" id="section-no-2-15">
+        <h2 class="heading heading-tertiary">2.15 Processes (ps)</h2>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250268799.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+
+        <p class="text">On any operating system, programs run as 'processes'. For example, if you bring up the Task Manager in Windows you can click on the Processes tab and see a list of all the running programs on your computer. On Linux, we can do the same thing. For this, we use the <code class="code code-inline">ps</code> command.</p>
+
+        <p class="text">The output of running the ps command looks something like this:</p>
+
+        <pre><code class="language-console hljs shell">agent@cpa:~ $ ps
+PID  TTY    TIME      CMD
+900  pts/0  00:00:00  bash
+928  pts/0  00:00:00  ps</code></pre>
+
+        <p class="text">You will see in this example that there are only two processes running for this user. Bash is the 'Bourne Again Shell', which is just the terminal. The other process running is ps. That's because ps is a program and, by running it, it can find itself in the process list. By reading <code class="code code-inline">man ps</code> you can find out that by default ps will only show you processes for the user you are currently running as. It does, however, take have some options that which can change this behaviour.</p>
+
+        <pre><code class="language-console hljs shell">-u</code></pre>
+
+        <p class="text">Will allow you to see more information about all the running processes.</p>
+
+        <pre><code class="language-console hljs shell">-ax</code></pre>
+
+        <p class="text">Will allow you to see all processes running on the system, not only those for your user.</p>
+
+        <p class="text">Combining the two, we can use <code class="code code-inline">ps -aux</code> to see a lot more information. Interestingly, we can also see the parameters that were passed to any running program when it was started. This is why it's unsafe to pass a password into a program from the Terminal. For example:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ./secureprogram -password <span class="hljs-string">"mysupersecretpassword"</span></span></code></pre>
+
+        <p class="text">This is a bad idea because, while the program 'secureprogram' is running, any user will be able to use <code class="code code-inline">ps -aux</code> to see that "mysupersecretpassword" was sent to the program as a password.</p>
+      </div>
+
+      <div class="section" id="section-no-2-16">
+        <h2 class="heading heading-tertiary">2.16 History</h2>
+
+        <p class="text">It's interesting to note that everything you type in the Terminal window is logged into a file. This file is called the history file. Typing <code class="code code-inline">history</code> will show you everything you have been typing in the Terminal. It's important to know it exists.</p>
+
+        <p class="text">The history is actually written to a file in the home directory called '.bash_history'. You can also clear it by removing that file, and then typing <code class="code code-inline">history -c</code>.</p>
+
+        <p class="text">The Terminal history is an important source of information if a system you are defending has been attacked and the attacker failed to clean up after himself. For an attacker, it could be an even more important source of information. If you ever typed a password in the Terminal, it will be shown there. So it's important to clear the history file after such cases.</p>
+      </div>
+
+      <div class="section" id="section-no-2-17">
+        <h2 class="heading heading-tertiary">2.17 Netcat</h2>
+
+        <p class="text">Netcat is known as the 'swiss-army knife' of network utilities. It's an incredibly useful tool which is installed by default on most Linux systems. It can be used to either create a network server listening on a port, or connect to a network server on a specific port.</p>
+
+        <p class="text">To set netcat to listen on a particular port:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -l 1337</span></code></pre>
+
+        <p class="text">This tells netcat to listen on port 1337.</p>
+
+        <p class="text">To set netcat to connect to a port:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc 192.168.33.2 1337</span></code></pre>
+
+        <p class="text">This tells netcat to connect to 192.168.33.2 on port 1337.</p>
+
+        <p class="text">This really is the basis of what netcat can do, but it doesn't really demonstrate how useful it can be. You can use it for transferring files between two computers:</p>
+
+        <p class="text">On the receiving computer:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc -l 1337 &gt; myfile</span></code></pre>
+
+        <p class="text">This will tell netcat to listen on port 1337, and any data it receives will be output to a file called 'myfile'.</p>
+
+        <p class="text">Then on the sending computer you can do:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> nc 192.168.33.2 1337 &lt; myfile</span></code></pre>
+
+        <p class="text">This tells netcat to connect to the receiving computer on port 1337 and send the contents of myfile.</p>
+
+        <p class="text">This effectively creates a copy of myfile from the sending computer on the receiving computer.</p>
+
+        <p class="text">There are many other uses of netcat, we'll leave finding the interesting ones up to you.</p>
+      </div>
+
+      <div class="section" id="section-no-2-18">
+        <h2 class="heading heading-tertiary">2.18 Scripting</h2>
+
+        <p class="text">It is possible to turn a series of commands into a script so that they run if you just execute the script on its own. It is almost as powerful as a true programming language, but in most cases you'll want to use a real programming language. Bash scripting can be useful for quick tasks, though.</p>
+
+        <p class="text">To create a bash script, you just make a text file and put in:</p>
+
+        <pre><code class="language-bash hljs"><span class="hljs-meta">#! /bin/bash</span></code></pre>
+
+        <p class="text">At the top, and below that, you put in your list of commands, like so:</p>
+
+        <pre><code class="language-bash hljs"><span class="hljs-meta">#! /bin/bash</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"This is my first bash script..."</span>
+<span class="hljs-built_in">cd</span> ~/Desktop
+ls -halt
+touch somefile
+ls -halt
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"Pretty cool, right?"</span></code></pre>
+
+        <p class="text">Then you'll make that text file executable using chmod:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> chmod +x myscript.sh</span></code></pre>
+
+        <p class="text">And then you can run it like any old program:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ./myscript.sh</span></code></pre>
+
+        <p class="text">You can do more with Bash scripting than just have a series of commands, similar to a programming language (you'll learn about these in the next section), you can do loops and conditionals. We'll leave that up to you to research if you'd like to use them, though.</p>
+      </div>
+
+      <div class="section" id="section-no-2-19">
+        <h2 class="heading heading-tertiary">2.19 Secure Shell (SSH)</h2>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250274788.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+
+        <p class="text">SSH stands for 'Secure Shell'. It's a method of logging into a remote system. SSH is protected by strong encryption so any commands you send are protected from eavesdropping. It's important to become familiar with SSH, as its use is very common in the industry.</p>
+
+        <p class="text">The most common usage of SSH is:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> ssh username@domain.com</span></code></pre>
+
+        <p class="text">Then you will be asked to enter a password. You will need to log in with a username that has SSH access enabled. Once you are logged in, a prompt will be provided by the remote server. Anything you then type into the Terminal will be as if you have typed it on the server you are logged into.</p>
+
+        <p class="text">Once you are finished and want to exit out of the SSH session, you can simply type exit in the terminal and you will be kicked back to the prompt on your local computer.</p>
+
+        <p class="text">You can also use 'scp' to copy files from a remote server onto your local computer. Scp actually uses SSH, so it works on any computer that has SSH enabled.</p>
+
+        <p class="text">Copy a local file to the remote server:</p>
+
+        <pre><code class="language-console hljs shell">scp file.txt username@domain.com:/folder/file.txt</code></pre>
+
+        <p class="text">This copies file.txt from your computer to the server into the folder called 'folder'.</p>
+
+        <p class="text">Copy a remote file to your local computer:</p>
+
+        <pre><code class="language-console hljs shell">scp username@domain.com:/folder/file.txt file.txt</code></pre>
+
+        <p class="text">This copies file.txt from the 'folder' folder on the remote server to file.txt on your local computer.</p>
+      </div>
+
+      <div class="section section-last">
+        <p class="text">Head to the next chapter <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-emphasis">Programming</a> or go <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link link-emphasis scrollto" id="no-2-1">back to the top</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz" id="section-quiz" data-token="0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8">
+    <h3 class="heading heading-tertiary heading-light heading-center">Pop quiz!</h3>
+
+    <div class="group">
+        <div class="number">Question 1.</div>
+        <div class="question">You won't always have access to the Terminal depending on the Linux system you are on. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="linux" data-question="1" data-answer="true" id="quiz_answer_1_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="1" data-answer="false" id="quiz_answer_1_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 2.</div>
+        <div class="question">You can list hidden files using <code class="code code-inline">-a</code> parameter of the `ls` program. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="2" data-answer="true" id="quiz_answer_2_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="2" data-answer="false" id="quiz_answer_2_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 3.</div>
+        <div class="question">The <code class="code code-inline">.</code> directory stands for the directory above the current directory. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="linux" data-question="3" data-answer="true" id="quiz_answer_3_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="3" data-answer="false" id="quiz_answer_3_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 4.</div>
+        <div class="question">The <code class="code code-inline">mv</code> command can also be used to rename a file. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="4" data-answer="true" id="quiz_answer_4_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="4" data-answer="false" id="quiz_answer_4_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 5.</div>
+        <div class="question">The <code class="code code-inline">cp</code> command can also be used to copy folders as long as you add the <code class="code code-inline">-r</code> parameter. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="5" data-answer="true" id="quiz_answer_5_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="5" data-answer="false" id="quiz_answer_5_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 6.</div>
+        <div class="question">You can pull up the manual page for the man command using <code class="code code-inline">$ man man</code>. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="6" data-answer="true" id="quiz_answer_6_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="6" data-answer="false" id="quiz_answer_6_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 7.</div>
+        <div class="question">The <code class="code code-inline">cat</code> command can only be used to combine more than one file together and print the result to the screen. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="linux" data-question="7" data-answer="true" id="quiz_answer_7_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="7" data-answer="false" id="quiz_answer_7_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 8.</div>
+        <div class="question">The <code class="code code-inline">grep</code> command searches for text within files. True or False?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="8" data-answer="true" id="quiz_answer_8_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="8" data-answer="false" id="quiz_answer_8_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 9.</div>
+        <div class="question">If you try to run a program, and the terminal tells you that you don't have permission to run it, if you have permission you can make it executable with <code class="code code-inline">chmod</code>. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="9" data-answer="true" id="quiz_answer_9_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="9" data-answer="false" id="quiz_answer_9_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 10.</div>
+        <div class="question">The greater-than symbol (<code class="code code-inline">&gt;</code>) can be used to redirect output to a file and if the file already exists it will append the output to the end of the file. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="linux" data-question="10" data-answer="true" id="quiz_answer_10_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="10" data-answer="false" id="quiz_answer_10_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 11.</div>
+        <div class="question">The find command only lets you search by filename. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="linux" data-question="11" data-answer="true" id="quiz_answer_11_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="11" data-answer="false" id="quiz_answer_11_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 12.</div>
+        <div class="question">If you run the <code class="code code-inline">ps</code> command without any parameters, you will only see running processes created by your user account. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="12" data-answer="true" id="quiz_answer_12_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="12" data-answer="false" id="quiz_answer_12_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 13.</div>
+        <div class="question">The history file cannot be cleared. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="linux" data-question="13" data-answer="true" id="quiz_answer_13_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="13" data-answer="false" id="quiz_answer_13_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 14.</div>
+        <div class="question">Netcat can be used to connect to a service listening on any port. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="14" data-answer="true" id="quiz_answer_14_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="14" data-answer="false" id="quiz_answer_14_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 15.</div>
+        <div class="question">The <code class="code code-inline">scp</code> command uses SSH to transfer files between computers. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="linux" data-question="15" data-answer="true" id="quiz_answer_15_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="linux" data-question="15" data-answer="false" id="quiz_answer_15_false">False</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+  </main>
+</div>
+
+<div class="module-footer">
+  <div class="footer" id="footer"><a id="cookieSettingsLink" class="link" style="margin-right: 15px;">Cookie Settings</a>
+    <div class="discovery"><a href="https://hub.joincyberstart.com/" target="_blank" class="link" rel="noopener noreferrer">Back to main dashboard &gt;</a></div>
+    <div class="copyright">Copyright 2021 SANS Institute. Version 4.2.4</div>
+
+        <div class="signout"><a href="https://game.joincyberstart.com/logout" class="link">Sign out</a></div>
+      </div>
+</div>
+
+
+<!-- Google Analytics -->
+    <script async="" src="./CyberStart Game_files/js"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+        gtag('set', {'user_id': '0412ca06-b7fc-4bc4-a77e-77e45f6710df'});
+        gtag('config', 'UA-109525775-8');
+
+</script>
+
+    <script>
+        var hubCookies = {
+            config: {
+                "domain": "joincyberstart.com",
+                "cs_assets_host": "assets.joincyberstart.com",
+                "footer_link": {
+                    "insert_start_of_dom_id": ["footer"],
+                    "link_class_list": "link",
+                    "link_text": "Cookie Settings",
+                    "link_style": "margin-right: 15px"
+                }
+            }
+        }
+    </script>
+    <script src="./CyberStart Game_files/cookies.js.download"></script>
+    
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e8c65ea953","applicationID":"107446324","transactionName":"YFFQYkIDD0ZVAkcNVlkbZ0RZTQxUWhRSCBdHXEI=","queueTime":0,"applicationTime":55,"atts":"TBZTFAoZHEg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+<script>
+$(document).ready(function () {
+
+  // Scroll function.
+  function scrollTo(element) {
+    jQuery("html, body").animate({scrollTop: element.offset().top}, 1000);
+  }
+
+  // On click scroll to anchor.
+  $(document).on("click", ".scrollto", function () {
+    var theAnchor = $("#section-" + this.id);
+
+    scrollTo(theAnchor);
+
+    return false;
+  });
+
+  // Quiz.
+  $(".js-quiz-answer").click(function() {
+    var csrf = $('#section-quiz').data('token');
+    var questionId = $(this).data('question');
+    var answer = $(this).data('answer');
+    var chapter = $(this).data('chapter');
+
+    // Remove answer selected.
+    $(this).parent().parent().find(".option .answer").removeClass("answer-selected");
+
+    // Add tab selected.
+    $(this).addClass("answer-selected");
+
+    var xhr = xhrObj();
+    xhr.onreadystatechange = function() {
+      // On successful response...
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var responseText = xhr.responseText;
+        var responseJSON = JSON.parse(responseText);
+        checkForCSRFFail(responseJSON);
+      }
+    }
+    xhr.open("POST", "/api", true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    var params = "action=quiz_answer&chapter="+chapter+"&question="+questionId+"&answer="+answer+"&csrf="+csrf;
+    xhr.send(params);
+
+    return false;
+  });
+});
+</script>
+</body></html>

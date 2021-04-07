@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="charset" content="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"><script src="./CyberStart Game_files/nr-1208.min.js.download"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQMHV1dQDRABVFZWAwcEVFA=",licenseKey:"e8c65ea953",applicationID:"107446324"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(24),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(25),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(25),a=t(24);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(21),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(24),c=t(25),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(26);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],20:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(23),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],21:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],22:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],23:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],24:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],25:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],26:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(24),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(y,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=t(18),c=t("handle"),s=t(24),f=t("ee"),u=t(22),d=t(19),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;if(d(l.location)){NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:x,userAgent:u};t(15),t(20),p[h]?(p[h]("DOMContentLoaded",o,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",i),l[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(25),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);</script>
+    <title>CyberStart Game</title>
+    <link type="text/css" rel="stylesheet" media="all" href="./CyberStart Game_files/styles.f4a8c688e96da30d3af8545a87dd1625.css">
+    <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        document.write('<script src="/assets/js/vendors/promise-polyfill.006f3795a9680e46c19e.js"><\/script>');
+    }
+    </script>
+    <script src="./CyberStart Game_files/jquery.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/highlight.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/confetti.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/event-stream.006f3795a9680e46c19e.js.download"></script>
+    <script src="./CyberStart Game_files/other.006f3795a9680e46c19e.js.download"></script>
+
+    
+    <link rel="apple-touch-icon-precomposed" href="https://game.joincyberstart.com/assets/images/apple-touch-icon.png?version=4.2.4">
+    <link rel="icon" type="image/png" href="https://game.joincyberstart.com/assets/images/apple-touch-icon.png?version=4.2.4">
+    <link rel="shortcut icon" href="https://game.joincyberstart.com/assets/images/favicon.ico?version=4.2.4">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+            <noscript>
+            <style>html {
+                    display: none;
+                }</style>
+            <meta http-equiv="refresh" content="0;url=/no-javascript">
+        </noscript>
+    </head>
+
+<body class="body vsc-initialized">
+
+
+    <div id="badge-modal" class="module-notification" style="display: none;"></div>
+
+    <div class="black-mask" id="blackMask"></div>
+    <div class="black-mask-modal" id="blackMaskModal"></div>
+    <div class="btn black-mask-btn" id="blackMaskBtn"></div>
+
+
+<div class="page page-standard page-navbar page-manual">
+  <nav class="module-navbar">
+    <div class="links">
+      <a href="https://game.joincyberstart.com/welcome" class="link">Welcome</a>
+
+      <a href="https://game.joincyberstart.com/manual" class="link">Field manual</a>
+
+                <a href="https://game.joincyberstart.com/base-select" class="link">Bases</a>
+            </div>
+
+    <div class="logo">
+  <a href="https://game.joincyberstart.com/base-select" class="link"><img src="./CyberStart Game_files/asset-game-logo-inside-02.png" alt="CyberStart Game" class="image"></a>
+</div>
+
+    <div class="info">
+    <div class="item">
+        <a href="https://game.joincyberstart.com/profile" class="link">View profile</a>
+    </div>
+
+    
+    <div class="item badges">22 badges</div>
+
+    <div class="item progress">62% complete</div>
+
+    <div class="item points">83,500 pts</div>
+</div>
+  </nav>
+  <main class="module-manual">
+    <div class="links">
+              <a href="https://game.joincyberstart.com/manual?chapter=01&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-introduction">
+        <span class="number">01</span>
+        <span class="name">Introduction</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=02&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-linux">
+        <span class="number">02</span>
+        <span class="name">Linux</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-programming">
+        <span class="number">03</span>
+        <span class="name">Programming</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=04&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-web">
+        <span class="number">04</span>
+        <span class="name">Web</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=05&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-binary">
+        <span class="number">05</span>
+        <span class="name">Binary</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=06&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-cryptography">
+        <span class="number">06</span>
+        <span class="name">Cryptography</span>
+      </a>
+              <a href="https://game.joincyberstart.com/manual?chapter=07&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-forensics">
+        <span class="number">07</span>
+        <span class="name">Forensics</span>
+      </a>
+            </div>
+
+    <div class="chapter chapter-03"><div class="chapter chapter-03">
+  <div class="topper topper-programming">
+    <div class="number">Chapter 03</div>
+
+    <h2 class="heading heading-secondary heading-center heading-light">Programming</h2>
+  </div>
+
+  <div class="illustration" style="background-image: url(&#39;/assets/images/asset-game-manual-programming-01.png?version=4.2.4&#39;);"></div>
+
+  <div class="columns">
+    <div class="sections">
+      <h3 class="heading heading-quaternary">Chapter sections</h3>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-1"><span class="number">3.1</span> Introduction</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-2"><span class="number">3.2</span> High Level vs Low Level Programming Languages</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-3"><span class="number">3.3</span> Hello World</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-4"><span class="number">3.4</span> Comments</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-5"><span class="number">3.5</span> Numbers</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-6"><span class="number">3.6</span> Variables</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-7"><span class="number">3.7</span> Input</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-8"><span class="number">3.8</span> Modules</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-9"><span class="number">3.9</span> Reading Files</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-10"><span class="number">3.10</span> Conditionals</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-11"><span class="number">3.11</span> Functions</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-12"><span class="number">3.12</span> Loops</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-13"><span class="number">3.13</span> Lists</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-14"><span class="number">3.14</span> Dictionaries</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-15"><span class="number">3.15</span> Encoding</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="no-3-16"><span class="number">3.16</span> Simple Web Server</a>
+
+      <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link scrollto" id="quiz">Quiz</a>
+    </div>
+
+    <div class="content">
+      <div class="section" id="section-no-3-1">
+        <h2 class="heading heading-tertiary">3.1 Introduction</h2>
+
+        <p class="text">Learning to program is a key step in understanding how computers work. More than that, it's incredibly useful to be able to put together a quick program which will do something automatically that would otherwise take a long time to do. Don't be intimidated by the word 'programming', once you break it down it's really very simple.</p>
+
+        <p class="text">In this manual, we'll touch on a few different programming languages but our main focus will be Python. Python is simple and easy to learn. That's the reason it's used by a lot of people who work in information security.</p>
+
+        <p class="text">There's one important rule you should know about programming: If your program doesn't work the first time, Google is your friend. If you've run into a problem, chances are it's a pretty common error. You will usually find the answer with a quick Google search - programmers help each other out all the time online.</p>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250278266.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+
+        <div class="video video-inline">
+          <iframe src="./CyberStart Game_files/250286191.html" width="600" height="338" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+        </div>
+      </div>
+
+      <div class="section" id="section-no-3-2">
+        <h2 class="heading heading-tertiary">3.2 High Level vs Low Level Programming Languages</h2>
+
+        <p class="text">Before we start actually learning how to program, it's important to understand the differences between types of languages. A computer does not understand programming languages. There is only one thing that a computer can understand: binary. Programming languages exist to make our lives easier; no one wants to write a program in meaningless 1s and 0s. Instead, we use a programming language and, once the program is written, it gets converted automatically into something that the computer understands.</p>
+
+        <p class="text">Programming languages that are the closest to binary are called low level programming languages, for example 'assembly'. Low level languages are often hard to learn and harder to write programs in.</p>
+
+        <p class="text">High level languages are furthest away from binary. They hide most of the complexity and do a lot of things for the programmer. An example of a high level programming language would be Python.</p>
+
+        <p class="text">To illustrate the differences, I'm going to produce a small program that, when run, will output some text to the screen in three different programming languages: assembly, C and Python. Don't panic! You don't need to know how to program in assembly or C.</p>
+
+        <p class="text">Python (helloworld.py):</p>
+
+        <pre><code class="language-python hljs">print(<span class="hljs-string">"Hello, World!"</span>)</code></pre>
+
+        <p class="text">C (helloworld.c):</p>
+
+        <pre><code class="language-c hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s\n"</span>, <span class="hljs-string">"Hello, World!"</span>);
+  <span class="hljs-keyword">return</span>(<span class="hljs-number">0</span>);
+}</code></pre>
+
+        <p class="text">Assembly (helloworld.asm):</p>
+
+        <pre><code class="language-x86asm hljs"><span class="hljs-meta">SECTION</span> .data
+<span class="hljs-symbol">HelloMsg:</span> <span class="hljs-built_in">db</span> <span class="hljs-string">"Hello, World!"</span>,<span class="hljs-number">10</span>
+<span class="hljs-symbol">HelloLen:</span> <span class="hljs-built_in">equ</span> $-HelloMsg
+
+  <span class="hljs-meta">SECTION</span> .bss
+  <span class="hljs-meta">SECTION</span> .text
+
+<span class="hljs-meta">global</span> _start
+<span class="hljs-symbol">_start:</span>
+
+  <span class="hljs-keyword">nop</span>
+  <span class="hljs-keyword">mov</span> <span class="hljs-built_in">eax</span>,<span class="hljs-number">4</span>
+  <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ebx</span>,<span class="hljs-number">1</span>
+  <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ecx</span>,HelloMsg
+  <span class="hljs-keyword">mov</span> <span class="hljs-built_in">edx</span>,HelloLen
+  <span class="hljs-keyword">int</span> <span class="hljs-number">80H</span>
+  <span class="hljs-keyword">mov</span> <span class="hljs-built_in">eax</span>,<span class="hljs-number">1</span>
+  <span class="hljs-keyword">mov</span> <span class="hljs-built_in">ebx</span>,<span class="hljs-number">0</span>
+  <span class="hljs-keyword">int</span> <span class="hljs-number">80H</span></code></pre>
+
+        <p class="text">This should show you the difference in complexity between a high level and a low level programming language. Python is at the highest level, assembly is at the lowest and C is somewhere in between.</p>
+
+        <p class="text">So, if we have high level programming languages, why would we ever use anything else? The answer is that high level programming languages hide a lot of what is going on from the programmer. Someone who is good at assembly can make a program that runs faster and more efficiently than someone who creates the same program in Python.</p>
+
+        <p class="text">Now that you know low level programming languages exist, we're going to ignore them for the rest of this section. Let's get you started in Python.</p>
+      </div>
+
+      <div class="section" id="section-no-3-3">
+        <h2 class="heading heading-tertiary">3.3 Hello World</h2>
+
+        <div class="illustration-inline" style="background-image: url(&#39;/assets/images/asset-game-manual-inline-05.png?version=4.2.4&#39;);"></div>
+
+        <p class="text">Python is what is known as an interpreted language. That means that you have to have Python installed on your computer for it to be able to translate the Python programming language into something the computer can understand. Python doesn't generate executable files that you can just run, instead you have to run the Python program on a text file that contains the code you want to run.</p>
+
+        <p class="text"><strong>Important Note:</strong> There is a way to turn Python code into executable files. We won't go into the process here but just know that it involves adding the whole of Python into the executable along with your code.</p>
+
+        <p class="text">Let's get started with our first Python program. First, open Geany. You will find it in the Main Menu, then Programming and Geany will be right there. It's a programmer's text editor. You can use a normal text editor also but the syntax highlighting is a useful feature to have; it can make reading code much easier on the eyes.</p>
+
+        <p class="text">Once you have Geany open, make a new file, call it 'helloworld.py' and save it somewhere.</p>
+
+        <p class="text">Now write the following in the document and save it:</p>
+
+        <pre><code class="language-python hljs">print(<span class="hljs-string">"Hello, World!"</span>)
+print(<span class="hljs-string">"I'm writing my first program."</span>)</code></pre>
+
+        <p class="text">Then open your Terminal from the Main Menu, then Accessories, then Terminal. With your Terminal open, cd to the place where you saved your file and type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> python3 helloworld.py</span></code></pre>
+
+        <p class="text">You should see the following print to the screen:</p>
+
+        <pre><code class="language-console hljs shell">Hello, World!
+I'm writing my first program.</code></pre>
+
+        <p class="text">Congratulations, you made your first computer program!</p>
+
+        <p class="text">That's all a computer program really is: a series of instructions that the computer should follow.</p>
+
+        <p class="text">It's worth noting that there are two versions of Python. Python 3 and Python 2. They are not identical. The code in this manual is written in Python 3.</p>
+
+        <p class="text">If you are not sure which your default is you can type:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> python --version</span></code></pre>
+
+        <p class="text">If you are using Python 2 by default very often you can use Python 3 by using the following to execute your code:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> python3</span></code></pre>
+      </div>
+
+      <div class="section" id="section-no-3-4">
+        <h2 class="heading heading-tertiary">3.4 Comments</h2>
+
+        <p class="text">Even when using an easily readable programming language like Python, you can sometimes forget what your code is supposed to do. If you leave a project and come back to it a week or even a month later you may have no idea what your intention was. That's why it's important to leave code comments.</p>
+
+        <p class="text">A code comment is just a line of text that is ignored by Python. You can leave notes for yourself or someone else who is going to continue to work on your project. The way to leave comments is to use the 'pound' or 'hash' character #.</p>
+
+        <p class="text">So create a new file in Geany and call it whatever you like. Make sure it ends in .py!</p>
+
+        <p class="text">Then type this:</p>
+
+        <pre><code class="language-python hljs"><span class="hljs-comment"># Everything after the '#' is ignored by Python.</span>
+print(<span class="hljs-string">"Blah blah blah"</span>) <span class="hljs-comment"># and this comment is ignored</span>
+
+<span class="hljs-comment"># The line of code below doesn't work, I wonder why?!</span>
+<span class="hljs-comment"># I'll comment it out for now until I can figure it out...</span>
+<span class="hljs-comment"># print(I forgot the quotation mark on purpose")</span>
+print(<span class="hljs-string">"This one works though!"</span>)</code></pre>
+      </div>
+
+      <div class="section" id="section-no-3-5">
+        <h2 class="heading heading-tertiary">3.5 Numbers</h2>
+
+        <p class="text">We can also do maths in Python - it's really very easy. But remember, real programmers always count from 0. 0 is a number too!</p>
+
+        <p class="text">Now create a new Python file in Geany and type this:</p>
+
+        <pre><code class="language-python hljs">print(<span class="hljs-number">512</span> + <span class="hljs-number">256</span>)
+print(<span class="hljs-number">100</span> - <span class="hljs-number">25</span>)
+print(<span class="hljs-number">120</span> * <span class="hljs-number">244</span>)
+print(<span class="hljs-number">244</span> / <span class="hljs-number">120</span>)
+print(<span class="hljs-number">9</span> % <span class="hljs-number">2</span>) <span class="hljs-comment"># The % is a modulo sign.</span></code></pre>
+
+        <p class="text">Now let's look at some weirder ones:</p>
+
+        <pre><code class="language-python hljs">&lt; : less than
+&gt; : greater than
+&lt;= : less than <span class="hljs-keyword">or</span> equal to
+&gt;= : greater than <span class="hljs-keyword">or</span> equal to</code></pre>
+
+        <p class="text">So let's see how we can use them:</p>
+
+        <pre><code class="language-python hljs">print(<span class="hljs-number">5</span> &lt; <span class="hljs-number">2</span>) <span class="hljs-comment"># Is 5 less than 2? Prints False</span>
+print(<span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span>) <span class="hljs-comment"># Is 2 greater than 1? Prints True</span>
+print(<span class="hljs-number">5</span> &lt;= <span class="hljs-number">5</span>) <span class="hljs-comment"># Is 5 less than or equal to 5? Prints True</span></code></pre>
+
+        <p class="text">They may not seem very important yet; of course you know that 2 is greater than 1. So what's the big deal? It becomes very important later when we talk about variables and conditionals!</p>
+
+        <p class="text">Now let's talk more generally about numbers in programming. A whole number is called an 'integer'. Integers can only be whole numbers, no decimal points.</p>
+
+        <p class="text">Try it out...</p>
+
+        <pre><code class="language-python hljs">print(<span class="hljs-number">5</span> / <span class="hljs-number">4</span>)</code></pre>
+
+        <p class="text">You get 1.25 right? Well in Python 3 the programming language will automatically convert your integer into a float for you. In our example, the inputs 5 and 4 are integers and the result is a float.</p>
+
+        <p class="text">A float is just a number with a decimal point in it. In the previous version of Python, Python 2 there was no automatic conversion.</p>
+
+        <p class="text">In Python 2 if you were to do print(5 / 4) the result would be 1 instead of 1.25 because an integer cannot have a decimal point. To get around that you needed to make the inputs floats also.</p>
+
+        <p class="text">For example:</p>
+
+        <pre><code class="language-python hljs">print(<span class="hljs-number">5.0</span> / <span class="hljs-number">4.0</span>)</code></pre>
+
+        <p class="text">In Python 2 you would get 1.25, while if you had just done print(5 / 4) you would get 1. This is a key difference to pay attention to depending on which version of Python you are using.</p>
+
+        <p class="text">Both integers and floats are types of numbers, but one can only be a whole number and the other has a decimal point.</p>
+      </div>
+
+      <div class="section" id="section-no-3-6">
+        <h2 class="heading heading-tertiary">3.6 Variables</h2>
+
+        <p class="text">A variable is just a name we can give to a bit of information. Take this example:</p>
+
+        <pre><code class="language-python hljs">pizza = <span class="hljs-number">20</span>
+slices_per_pizza = <span class="hljs-number">12</span>
+total_slices = pizza * total_slices
+
+kids = <span class="hljs-number">40</span>
+slices_per_kid = <span class="hljs-number">4</span>
+slices_required = slices_per_kid * kids
+
+print(<span class="hljs-string">"There are "</span> + str(pizza) + <span class="hljs-string">" pizzas that have been delivered."</span>)
+print(<span class="hljs-string">"Each pizza has "</span> + str(slices_per_pizza) + <span class="hljs-string">" slices."</span>)
+print(<span class="hljs-string">"There are "</span> + str(kids) + <span class="hljs-string">" Kids at the party."</span>)
+print(<span class="hljs-string">"Each kid will eat about "</span> + str(slices_per_kid) + <span class="hljs-string">" slices"</span>)
+print(<span class="hljs-string">"So we need at least "</span> + str(slices_required) + <span class="hljs-string">" slices of pizza."</span>)
+print(<span class="hljs-string">"And we have "</span> + str(total_slices) + <span class="hljs-string">" slices of pizza."</span>)</code></pre>
+
+        <p class="text">By using a variable, what we're saying is that we're creating a box with a name on it and putting some information in that box. From then onwards, anytime we need that information we can just use the name on the box instead.</p>
+
+        <p class="text">But why did we use str(pizza) when we were printing out the lines?</p>
+
+        <p class="text">Well, the reason is that 20 is a number. In programming we call a whole number an integer. The text `"There are "` is called a 'string' in programming. Python doesn't like combining the two, so we need to tell Python to turn that integer into a string when we print it out. All we're saying is: take "There are " and add on the value of pizza after it is turned into a string, then add on " pizzas that have been delivered." and print it out to the screen.</p>
+
+        <p class="text">If you want to try an experiment, try removing the str() bit from around 'pizza' and see what happens when you try to run it.</p>
+
+        <p class="text">It tells you there is an error:</p>
+
+        <pre><code class="language-console hljs shell">TypeError: cannot concatenate 'str' and 'int' objects.</code></pre>
+
+        <p class="text">It's just telling you that it doesn't like to add an integer together with a string.</p>
+      </div>
+
+      <div class="section" id="section-no-3-7">
+        <h2 class="heading heading-tertiary">3.7 Input</h2>
+
+        <p class="text">Now let's talk about user input. Of course, for more than just a basic one-time-use program, its useful to be able to take user input. Let's show you how.</p>
+
+        <p class="text">Once again, create a new Python file and type:</p>
+
+        <pre><code class="language-python hljs">print(<span class="hljs-string">"How awesome are you?"</span>)
+awesome = input()
+
+print(<span class="hljs-string">"So you're this awesome:"</span>)
+print(awesome)</code></pre>
+
+        <p class="text">Simple, right?</p>
+      </div>
+
+      <div class="section" id="section-no-3-8">
+        <h2 class="heading heading-tertiary">3.8 Modules</h2>
+
+        <p class="text">Now you might occasionally see at the top of a Python script:</p>
+
+        <pre><code class="language-python hljs"><span class="hljs-keyword">import</span> something</code></pre>
+
+        <p class="text">This imports a 'module' called 'something'. A module is just a piece of code written, either by you or someone else, that gives you extra features that aren't available by default in Python.</p>
+
+        <p class="text">For example, there is a module called urllib.request which makes it easy to grab text from a website. To import it you would put `import urllib.request` at the top of your Python script.</p>
+      </div>
+
+      <div class="section" id="section-no-3-9">
+        <h2 class="heading heading-tertiary">3.9 Reading Files</h2>
+
+        <p class="text">Let's now cover doing something basic: reading a file. First thing's first, create your Python script in Geany as usual. Now create a text file in the same directory called 'demo.txt'. Put in some random text, whatever you feel like.</p>
+
+        <p class="text">Now in your Python script type:</p>
+
+        <pre><code class="language-python hljs"><span class="hljs-keyword">with</span> open(<span class="hljs-string">'demo.txt'</span>) <span class="hljs-keyword">as</span> file:
+  print(file.read())</code></pre>
+
+        <p class="text">Watch out for the tab before print!</p>
+      </div>
+
+      <div class="section" id="section-no-3-10">
+        <h2 class="heading heading-tertiary">3.10 Functions</h2>
+
+        <p class="text">Up until now, we've been writing code linearly: one instruction follows on from the next. That's good enough for short programs but, if you write code like that for larger programs, things can quickly start to get messy. That's where 'functions' come in: a bit of code that performs a function.</p>
+
+        <p class="text">Let's show you an example. Create a new Python script in Geany and type:</p>
+
+        <pre><code class="language-python hljs"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">makeCapitals</span><span class="hljs-params">(arg1)</span>:</span>
+  caps = arg1.upper()
+  <span class="hljs-keyword">return</span> caps
+
+result = makeCapitals(<span class="hljs-string">"hello, world!"</span>)
+print(result)</code></pre>
+
+        <p class="text">Here we define a function called makeCapitals. We say it takes in one argument and we're calling it arg1. Then we make a new variable called caps and assign it the value of arg1 after it has been uppercased. Then we return caps.</p>
+
+        <p class="text">'Return' tells the program to go back to where you were in the code when the function was called.</p>
+
+        <p class="text">When the Python script is run, the function is skipped over because it hasn't been called yet, then our actual code starts at result. When we get to result, we're calling makeCapitals and passing it a string. That makes the code jump up to the function and arg1 then equals the string that was passed to it. So arg1 would equal "hello, world!". So then caps would equal "HELLO, WORLD!" and, since it is returned, the variable result would equal "HELLO, WORLD!".</p>
+
+        <p class="text">Try running it and see what happens.</p>
+
+        <p class="text"><strong>Important Note:</strong> Don't forget the indentation. In many programming languages, indents just make the code easier to read, but Python is different. In Python, the indent is important.</p>
+
+        <p class="text">In C, you can tell which code belongs where by the use of curly braces. For example:</p>
+
+        <pre><code class="language-c hljs arduino"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s\n"</span>, <span class="hljs-string">"Hello, World!"</span>);
+  <span class="hljs-keyword">return</span>(<span class="hljs-number">0</span>);
+}</code></pre>
+
+        <p class="text">In the above example, the curly braces show that the bit between belongs to the <code class="code code-inline">function main()</code>.</p>
+
+        <p class="text">In Python, there are no curly braces. Let's look at the code above again:</p>
+
+        <pre><code class="language-python hljs"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">makeCapitals</span><span class="hljs-params">(arg1)</span>:</span>
+  caps = arg1.upper()
+  <span class="hljs-keyword">return</span> caps</code></pre>
+
+        <p class="text">As you can see, there are no curly braces. So the indent is the only thing that tells Python that the indented code belongs to the function <code class="code code-inline">makeCapitals</code>.</p>
+      </div>
+
+      <div class="section" id="section-no-3-11">
+        <h2 class="heading heading-tertiary">3.11 Conditionals</h2>
+
+        <div class="illustration-inline" style="background-image: url(&#39;/assets/images/asset-game-manual-inline-06.png?version=4.2.4&#39;);"></div>
+
+        <p class="text">Now let's talk about conditionals. What if you only want some code to run if a certain thing is true? Let's explore how we can do that. Create a new Python script in Geany and type:</p>
+
+        <pre><code class="language-python hljs">print(<span class="hljs-string">"How many programmers are there?"</span>)
+programmers = int(input())
+
+print(<span class="hljs-string">"How many monkeys are there?"</span>)
+monkeys = int(input())
+
+<span class="hljs-keyword">if</span> monkeys &gt; programmers:
+  print(<span class="hljs-string">"We have the works of Shakespeare."</span>)
+<span class="hljs-keyword">elif</span> monkeys &lt; programmers:
+  print(<span class="hljs-string">"We have some dodgy code."</span>)
+<span class="hljs-keyword">else</span>:
+  print(<span class="hljs-string">"The monkeys and programmers go to war."</span>)</code></pre>
+
+        <p class="text">What exactly are we doing here?</p>
+
+        <p class="text">First, we take in two variables from the user and convert them to integers. <code class="code code-inline">input</code> takes in everything as a string but, if we want to compare them as numbers, they have to be considered numbers.</p>
+
+        <p class="text">Then we check if the value of monkeys is greater than the value of programmers. If it is, then run that code that is indented below it. If it isn’t, skip over that code and go to the next un-indented line.</p>
+
+        <p class="text">So now it checks if monkeys are less than programmers. If it's true, then run the code that is indented and, if it isn't true, then skip over it and go to the next un-indented line. The next line is else, which just means: if nothing else above was true, then run this code that is indented below it.</p>
+
+        <p class="text">Play around and start giving it different values for monkeys and programmers and see if you can guess what the output will be before running the program.</p>
+      </div>
+
+      <div class="section" id="section-no-3-12">
+        <h2 class="heading heading-tertiary">3.12 Loops</h2>
+
+        <p class="text">What if you want to run a bit of code over and over again? It would be really inefficient to just type out the same command line after line, right?</p>
+
+        <p class="text">Well, we can use loops for that. Python makes this much easier than other programming languages. You know the drill by now: create a new Python script in Geany and start typing:</p>
+
+        <pre><code class="language-python hljs"><span class="hljs-comment"># This is a list, it allows you to store multiple things in one variable.</span>
+firefly = [<span class="hljs-string">"Mal"</span>, <span class="hljs-string">"Jayne"</span>, <span class="hljs-string">"Kaylee"</span>, <span class="hljs-string">"River"</span>, <span class="hljs-string">"Wash"</span>, <span class="hljs-string">"Zoe"</span>, <span class="hljs-string">"Simon"</span>, <span class="hljs-string">"Inara"</span>, <span class="hljs-string">"Book"</span>]</code></pre>
+
+        <pre><code class="language-python hljs"><span class="hljs-comment"># Now for the 'for' loop</span>
+<span class="hljs-keyword">for</span> character <span class="hljs-keyword">in</span> firefly:
+  print(<span class="hljs-string">"I think "</span> + character + <span class="hljs-string">" is awesome!"</span>)</code></pre>
+
+        <p class="text">Now run it. See what happened there? This script went through the list and assigned each item to the variable 'character'. So after every time it ran, it moved on to the next item in the list. This is called a 'for' loop.</p>
+
+        <p class="text">There is another type of loop called the 'while' loop. Once again, create a new Python script and let's see how those work...</p>
+
+        <pre><code class="language-python hljs">firefly_fans = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> (firefly_fans &lt; <span class="hljs-number">1000</span>):
+  print(<span class="hljs-string">"Firefly fans: "</span> + str(firefly_fans))
+  firefly_fans = firefly_fans + <span class="hljs-number">1</span>
+
+print(<span class="hljs-string">"Firefly is finally popular!"</span>)</code></pre>
+
+        <p class="text">What we're doing here is making sure a specific bit of code keeps running 'while' something is true. So while the number of <code class="code code-inline">firefly_fans</code> is less than 1000, keep running this code.</p>
+
+        <p class="text"><strong>Important Note:</strong> BE CAREFUL: you could find yourself with the dreaded 'infinite loop' if you don't make sure that eventually the loop will stop running. In this case, every time the code runs, we are adding 1 to the number of firefly_fans. This means that eventually it will hit 1000 and the 'while' statement will no longer be true. Then the code will move on to print "Firefly is finally popular!". If we forgot to add 1 to the number of firefly_fans, the loop would keep going forever!</p>
+      </div>
+
+      <div class="section" id="section-no-3-13">
+        <h2 class="heading heading-tertiary">3.13 Lists</h2>
+
+        <p class="text">In a previous chapter, we mentioned lists. We'll go into a bit more detail here. A list can contain any number of elements; they could be strings or integers or floats or a mixture. You could even have lists of lists if you wanted!</p>
+
+        <p class="text">Let's explore how to use them in a bit more detail:</p>
+
+        <pre><code class="language-python hljs">animals = [<span class="hljs-string">"cat"</span>, <span class="hljs-string">"dog"</span>, <span class="hljs-string">"wolf"</span>, <span class="hljs-string">"bear"</span>]</code></pre>
+
+        <p class="text">Here we have a list of animals, so how do we get the information out? We could use a loop again but what if we only wanted to access a specific bit of information?</p>
+
+        <p class="text">Well, the list is numbered. Remember how I mentioned before that real programmers count from 0? This is why. The first element is element 0. So if you wanted to get the first element in the list you could do:</p>
+
+        <pre><code class="language-python hljs">print(animals[<span class="hljs-number">0</span>])</code></pre>
+
+        <p class="text">That would print out 'cat'.</p>
+
+        <p class="text">For a list with 8 elements, the first element is 0 and the last element is 7. Confusing, right? You'll get used to it!</p>
+      </div>
+
+      <div class="section" id="section-no-3-14">
+        <h2 class="heading heading-tertiary">3.14 Dictionaries</h2>
+
+        <p class="text">A dictionary in Python is a little like a list, but instead of referring to each item by its position, each item has a matching key by which you can reference it.</p>
+
+        <p class="text">It's easier to show an example, than to explain:</p>
+
+        <pre><code class="language-python hljs">person = {<span class="hljs-string">"name"</span>: <span class="hljs-string">"Bob"</span>, <span class="hljs-string">"age"</span>: <span class="hljs-number">22</span>}
+
+print(person[<span class="hljs-string">"name"</span>])
+print(person[<span class="hljs-string">"age"</span>])</code></pre>
+
+        <p class="text">Here, if we want to get the value of the person's name, we can use the 'name' key to pull that information out of the dictionary.</p>
+      </div>
+
+      <div class="section" id="section-no-3-15">
+        <h2 class="heading heading-tertiary">3.15 Encoding</h2>
+
+        <p class="text">Not a lot has changed between Python 2 and Python 3 with the exception of encoding.</p>
+
+        <p class="text">In Python 3 it is common for strings to be returned as a byte object (an array of integers). Before byte objects can be used as strings they must be decoded.</p>
+
+        <p class="text">To do this you can use the .decode() function on the object, for example:</p>
+
+        <pre><code class="language-python hljs">byteobj = <span class="hljs-string">b'Hello World'</span>
+stringobj = byteobj.decode()
+print(stringobj)
+        </code></pre>
+
+        <p class="text">Likewise to turn a string into a byte object it must be encoded using the .encode() function on the object. For example:</p>
+        <pre><code class="language-python hljs">stringobj = <span class="hljs-string">"Hello World"</span>
+byteobj = stringobj.encode()
+print(byteobj)
+        </code></pre>
+
+        <p class="text">In Python 3 it can be common to find errors in your code because something is a byte object when you want it to be a string and vice versa.</p>
+      </div>
+
+      <div class="section" id="section-no-3-16">
+        <h2 class="heading heading-tertiary">3.16 Simple Web Server</h2>
+
+        <p class="text">Python has a lot of amazing modules built into it, but one of the best is the http.server module. It's great because you don't even have to write any Python to use it! You can just run it from the command line. Here's how:</p>
+
+        <pre><code class="language-console hljs shell"><span class="hljs-meta">$</span><span class="bash"> python3 -m http.server</span></code></pre>
+
+        <p class="text">That will just run your web server for you and it will serve files that were in the directory you ran it from. So if you put an HTML file in a folder, cd to it and run that command, people will be able to view that HTML file at your IP address.</p>
+      </div>
+
+      <div class="section section-last">
+        <p class="text">Head to the next chapter <a href="https://game.joincyberstart.com/manual?chapter=04&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="link link-emphasis">Web</a> or go <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8#" class="link link-emphasis scrollto" id="no-3-1">back to the top</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz" id="section-quiz" data-token="0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8">
+    <h3 class="heading heading-tertiary heading-light heading-center">Pop quiz!</h3>
+
+    <div class="group">
+        <div class="number">Question 1.</div>
+        <div class="question">High level programming languages are easier to use, but give you less control over what the processor is actually doing. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="16" data-answer="true" id="quiz_answer_1_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="programming" data-question="16" data-answer="false" id="quiz_answer_1_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 2.</div>
+        <div class="question">When printing in Python, the text you wish to print must be enclosed in quotes. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="17" data-answer="true" id="quiz_answer_2_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="programming" data-question="17" data-answer="false" id="quiz_answer_2_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 3.</div>
+        <div class="question">Code comments are not important. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="programming" data-question="18" data-answer="true" id="quiz_answer_3_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="18" data-answer="false" id="quiz_answer_3_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 4.</div>
+        <div class="question">A whole number is known as a 'float'. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="programming" data-question="19" data-answer="true" id="quiz_answer_4_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="19" data-answer="false" id="quiz_answer_4_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 5.</div>
+        <div class="question">When combining a number and a string, we need to tell Python to convert the number into a string first. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="20" data-answer="true" id="quiz_answer_5_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="programming" data-question="20" data-answer="false" id="quiz_answer_5_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 6.</div>
+        <div class="question">In Python the <code class="code code-inline">input()</code> function can be used to read input from a user on the command line. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="21" data-answer="true" id="quiz_answer_6_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="programming" data-question="21" data-answer="false" id="quiz_answer_6_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 7.</div>
+        <div class="question">Take the following line of python code: <code class="code code-inline">with open('stuff.txt') as something:</code>. If you were going to read the contents of the file next, you would use <code class="code code-inline">something.read()</code>. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="22" data-answer="true" id="quiz_answer_7_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="programming" data-question="22" data-answer="false" id="quiz_answer_7_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 8.</div>
+        <div class="question">A function allows you to run the same piece of code from different places in your program without having to copy and paste it all over the place. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="23" data-answer="true" id="quiz_answer_8_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-incorrect js-quiz-answer " data-chapter="programming" data-question="23" data-answer="false" id="quiz_answer_8_false">False</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="number">Question 9.</div>
+        <div class="question">Given the following Python list: <code class="code code-inline">["first entry", "second entry", "third entry"]</code>, "first entry" is at position 1. True or false?</div>
+        <div class="answers">
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-true answer-incorrect js-quiz-answer " data-chapter="programming" data-question="24" data-answer="true" id="quiz_answer_9_true">True</a>
+            </div>
+            <div class="option">
+                <a href="https://game.joincyberstart.com/manual?chapter=03&amp;csrf=0ae5a537feaaca6861274b21b855e588ba3a1895dd0702bc33d697c5fd7b82e8" class="answer answer-false answer-correct js-quiz-answer answer-selected" data-chapter="programming" data-question="24" data-answer="false" id="quiz_answer_9_false">False</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+  </main>
+</div>
+
+<div class="module-footer">
+  <div class="footer" id="footer"><a id="cookieSettingsLink" class="link" style="margin-right: 15px;">Cookie Settings</a>
+    <div class="discovery"><a href="https://hub.joincyberstart.com/" target="_blank" class="link" rel="noopener noreferrer">Back to main dashboard &gt;</a></div>
+    <div class="copyright">Copyright 2021 SANS Institute. Version 4.2.4</div>
+
+        <div class="signout"><a href="https://game.joincyberstart.com/logout" class="link">Sign out</a></div>
+      </div>
+</div>
+
+
+<!-- Google Analytics -->
+    <script async="" src="./CyberStart Game_files/js"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+        gtag('set', {'user_id': '0412ca06-b7fc-4bc4-a77e-77e45f6710df'});
+        gtag('config', 'UA-109525775-8');
+
+</script>
+
+    <script>
+        var hubCookies = {
+            config: {
+                "domain": "joincyberstart.com",
+                "cs_assets_host": "assets.joincyberstart.com",
+                "footer_link": {
+                    "insert_start_of_dom_id": ["footer"],
+                    "link_class_list": "link",
+                    "link_text": "Cookie Settings",
+                    "link_style": "margin-right: 15px"
+                }
+            }
+        }
+    </script>
+    <script src="./CyberStart Game_files/cookies.js.download"></script>
+    
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e8c65ea953","applicationID":"107446324","transactionName":"YFFQYkIDD0ZVAkcNVlkbZ0RZTQxUWhRSCBdHXEI=","queueTime":0,"applicationTime":30,"atts":"TBZTFAoZHEg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script>
+
+<script>
+$(document).ready(function () {
+
+  // Scroll function.
+  function scrollTo(element) {
+    jQuery("html, body").animate({scrollTop: element.offset().top}, 1000);
+  }
+
+  // On click scroll to anchor.
+  $(document).on("click", ".scrollto", function () {
+    var theAnchor = $("#section-" + this.id);
+
+    scrollTo(theAnchor);
+
+    return false;
+  });
+
+  // Quiz.
+  $(".js-quiz-answer").click(function() {
+    var csrf = $('#section-quiz').data('token');
+    var questionId = $(this).data('question');
+    var answer = $(this).data('answer');
+    var chapter = $(this).data('chapter');
+
+    // Remove answer selected.
+    $(this).parent().parent().find(".option .answer").removeClass("answer-selected");
+
+    // Add tab selected.
+    $(this).addClass("answer-selected");
+
+    var xhr = xhrObj();
+    xhr.onreadystatechange = function() {
+      // On successful response...
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var responseText = xhr.responseText;
+        var responseJSON = JSON.parse(responseText);
+        checkForCSRFFail(responseJSON);
+      }
+    }
+    xhr.open("POST", "/api", true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    var params = "action=quiz_answer&chapter="+chapter+"&question="+questionId+"&answer="+answer+"&csrf="+csrf;
+    xhr.send(params);
+
+    return false;
+  });
+});
+</script>
+</body></html>
